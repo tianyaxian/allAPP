@@ -1,0 +1,154 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>绘本动画电子书专题</title>
+    <link rel="stylesheet" href="css/idangerous.swiper.css?gedecache=1">
+    <link rel="stylesheet" href="css/style.css?gedecache=1">
+    <script src="js/swiper-3.3.1.min.js?gedecache=1"></script>
+    <script src="js/jquery-1.11.3.js?gedecache=1"></script>
+    <script src="js/data.js?gedecache=1"></script>
+    <script src="js/swiper-demos.js?gedecache=1"></script>
+</head>
+<body>
+<div class="tittle">
+    <hr>
+    <h1>绘本动画电子书专题</h1>
+</div>
+<div class="contetn" style="overflow: hidden;">
+    <div role="main" class="main" id="mainList">
+        <div class="wrapT" style="display: block; ">
+            <div class="swiper-main">
+                <div class="swiper-container swiper1">
+                    <div class="swiper-wrapper" id="zwmz" style="width: 20000px" >
+                    </div>
+                </div>
+                <div class="pagination pagination1"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main">
+                <div class="swiper-container swiper2">
+                    <div class="swiper-wrapper" id="gxjd">
+                    </div>
+                </div>
+                <div class="pagination pagination2"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main">
+                <div class="swiper-container swiper3">
+                    <div class="swiper-wrapper" id="kpbk">
+
+                    </div>
+                </div>
+                <div class="pagination pagination3"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main">
+                <div class="swiper-container swiper4">
+                    <div class="swiper-wrapper" id="kcwg">
+                    </div>
+                </div>
+                <div class="pagination pagination4"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main">
+                <div class="swiper-container swiper5">
+                    <div class="swiper-wrapper" id="mrgs">
+                    </div>
+                </div>
+                <div class="pagination pagination5"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main">
+                <div class="swiper-container swiper6">
+                    <div class="swiper-wrapper" id="youer">
+                    </div>
+                </div>
+                <div class="pagination pagination6"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main">
+                <div class="swiper-container swiper7">
+                    <div class="swiper-wrapper" id="cygs">
+                    </div>
+                </div>
+                <div class="pagination pagination7"></div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="refresh">
+            <img src="images/refesh.png"/>
+        </div>
+        <ul class="navUl">
+            <li>中外名著</li>
+            <li>国学经典</li>
+            <li>成语故事</li>
+            <li>科普百科</li>
+            <li>昆虫王国</li>
+            <li>名人故事</li>
+            <li class="children">幼儿</li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div id="mask" class="mask"></div>
+<div class="content1">
+    <div class="wrap">
+        <div class="loading"><img src="images/loading.gif"/></div>
+        <iframe src="" name="iframe" frameborder="0"></iframe>
+    </div>
+    <div class="QR_codesImg">
+        <img src="">
+        <p>扫码手机阅读本书</p>
+    </div>
+    <span id="close"><img src="images/closeBtn.png?gedecache=1"/> </span>
+</div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        $(".type-book li").each(function () {
+            $(this).click(function () {
+               /* var href = $(this).children('a').attr("href");*/
+                var   href="http://jieyueji.chaoxing.com:81/rs/apps/ktbook/stores/0170fd0eef4fa4ee/6bb61e3b7bce0931da574d19d1d82c88/assets/www/index.html"
+
+                var src1=$(this).find('img.QR_codes').attr("src");
+                console.log(src1);
+                $("#mask").css({
+                    "height": $(document).height(),
+                    "width": $(document).width()
+                }).show();
+                $(".content1").show();
+                $('.loading').show();
+                $(".wrap").children('iframe').attr("src", href);
+                $(".QR_codesImg").children('img').attr("src",src1);
+                $(".wrap").children('iframe').load(function () {
+                    $('.loading').hide();
+                });
+                return false;
+            })
+        });
+
+        $("#close").click(function () {
+            $(".content1").hide();
+            $("#mask").hide();
+            $(".wrap").children('iframe').attr("src", "about:blank");
+        })
+
+    })
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".refresh").click(function () {
+            window.location.reload();
+        })
+    });
+</script>
+</html>

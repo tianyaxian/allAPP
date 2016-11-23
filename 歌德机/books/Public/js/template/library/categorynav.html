@@ -1,0 +1,24 @@
+<div class='cateImg'>
+    <%if(data){%>
+        <img src='<%=etdk.g._IMG_+data[0]%>_nav.jpg' alt=''/>
+    <%}else{%>
+        <div class='search_clear_div'></div>
+    <%}%>
+</div>
+<div class='cate_content_none'>
+   <img src='/Public/imgs/cate_content_none.png' />
+</div>
+<div class='search_no_result'>
+    <img src='/Public/imgs/search_no_result.png' />
+</div>
+<div class='book_lists'>
+
+</div>
+<div class='pages_nav'>
+    <button class='upPage' rel='up'>上一页</button>
+    <% for(var i=1;i<=pages;i++){ %>
+        <button class='only_page <%if(i==1){%>only_page_gray<%}%>' page='<%=i%>'><%=i%></button>
+    <%}%>
+    <button class='nextPage' rel='down'>下一页</button>
+</div>
+

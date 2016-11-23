@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+<meta charset="utf-8">
+<title>小学生新课标古诗70首</title>
+<link href="css/style.css?gedecache=1" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/idangerous.swiper.css?gedecache=1">
+	<script language=javascript>
+		if(screen.width<='1080')
+			window.location = "gushiquanbu_s.html";
+	</script>
+<script src="js/jquery-1.7.2.min.js?gedecache=1"></script>
+<style>
+html,body{height:100%; width:100%;overflow:hidden;}
+.pagination {position:fixed; z-index: 20; right:80px; bottom: 52px; text-align:right; width:100%;}
+.swiper-pagination-switch { display: inline-block;width: 12px;height: 12px;border-radius:50%;background: #999; margin:0 8px; opacity: 0.8;cursor: pointer;}
+.swiper-visible-switch {background: #aaa;}
+.swiper-active-switch {background: #0e6fe7;}
+.swiper-container{width:100%; height:100%;}
+.device{width:100%; height:100%; position:absolute; top:0; left:0;}
+.bookPup canvas{
+	margin: 0 150px;
+}
+.iframe{
+	height:762px;
+	width:858px;
+	border: 1px solid #E8E8E8;
+}
+</style>
+</head>
+</head>
+
+<body onselectstart="return false;" oncontextmenu="return false;" style="-moz-user-select:none;">
+<!--2015.8.26添加-->
+<div id="show" style="width:100%; height:100%; position:absolute; left:0; top:0; z-index:99; display:none;"></div>
+<!--2015.8.26添加-->
+	<!--加载 2014.11.17-->
+	<!--<div class="onload" style="display:none;">
+    	<a href="javascript:window.stop();$('.onload').css('display','none');" class="fr load_rt"></a>
+        <img src="images/load.png?gedecache=1" class="load"/>正在加载请稍后
+    </div>-->
+    <!--加载-->
+	<div class="bookMain">
+        <div class="header clearfix">
+            <span class="fr">古诗欣赏</span>
+            <h2 class="fl">小学新课标古诗70首</h2>
+        </div>
+        <div class="device">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+          	
+          </div>
+          <div class="pagination" style="display:none;"></div>
+          <div class="page">
+          	<span id="cpage">1</span>/<span id="pages">21</span>
+          </div>
+       </div>
+       </div>
+    </div>
+	<a href="../ztbook/home/index.html?gedecache=1" style="z-index:99999;" class="help"><img src="images/icons4.png" class="png_box" /><p>返回</p></a>
+    <div class="chaoDaiClassify">
+    	<ul>
+        	<li class="cur"><a href="gushiquanbu.html?gedecache=1">作品浏览</a></li>
+            <li><a href="gushichaodai.html?gedecache=1">朝代浏览</a></li>
+        </ul>
+    </div>
+    
+    <div class="Colle_con clearfix" id="Colle_con" style="left:630px;">
+    	<div>
+        </div>
+    </div>
+    <!--新闻弹窗 begin-->
+    <div class="videoPup2" id="popWin">
+    	<img src="images/close.gif?gedecache=1" class="closePub" style="right:-47px;" />
+        <!-- <img src="images/twoPlus.gif?gedecache=1" class="twoPlus">
+        <img src="images/onePlus.gif?gedecache=1" class="onePlus"> -->
+    	<div id="videoShowWrap"><div class="loading"></div></div>
+    </div>
+    <!--蒙版开始-->
+    <div class="maskLayer"></div>
+    <!--蒙版结束-->
+    <!--新闻弹窗 end-->
+    <script src="js/gushigain.js?gedecache=1"></script>
+    <script src="js/gushiquanbu.js?gedecache=1"></script>
+	<script src="js/swfobject.js?gedecache=1"></script>
+    <script src="js/idangerous.swiper-2.1.min.js?gedecache=1"></script>
+	<script>
+	var onOff=null;/*2015.8.26添加*/
+    var mySwiper = new Swiper('.swiper-container',{
+      pagination: '.pagination',
+      paginationClickable: true,
+      loop:false,
+      onSlideNext:function(swiper){
+    	  nextPage();
+		  /*2015.8.26添加*/
+		$("#show").show();
+	  	clearTimeout(onOff);
+		  onOff = setTimeout(function(){
+			 $("#show").hide(); 
+		  },300)
+    	/*2015.8.26添加*/  	
+      },
+      onSlidePrev:function(swiper){
+    	  prevPage();
+		  /*2015.8.26添加*/
+		$("#show").show();
+	  	clearTimeout(onOff);
+		  onOff = setTimeout(function(){
+			 $("#show").hide(); 
+		  },300)
+    	/*2015.8.26添加*/  	
+      }
+    })
+    function picPrev() {
+    	prevPage();
+    }
+    function picNext() {
+    	nextPage();
+    }
+    <!--弹窗脚本-->
+	var cataid="";
+	var page=1;
+	var pageSize=28;
+	var totalpage=$(".swiper-slide").length;
+	//分类
+	$(".conveyer li").click(function(){
+		$(this).siblings().removeClass("cur");
+		$(this).addClass("cur");
+	});
+	function catabooks(cataid){
+		page=1;
+		$("#cpage").text(page);
+	}
+	//下一页
+	function nextPage(){
+		page++;
+		$("#cpage").text(page);
+		if(page == totalpage){
+			mySwiper.swipeTo(totalpage);
+		}
+	}
+	//上一页
+	function prevPage(){
+		page--;
+		$("#cpage").text(page);
+		if(page==1){
+			mySwiper.swipeTo(0);
+		}
+	}
+    </script>
+
+<script><!--弹窗脚本-->
+	$(".videoBox li").click(function(){
+		//更改视频地址
+		makehtml($(this).children("input").val(),$(this).find("img").attr("title"));
+		$(".maskLayer").show();		
+		if($(".maskLayer").css('display')=='block'){
+			$(".maskLayer").fadeTo('fast',0.4);
+			$('.maskLayer').height($(document).height());
+		}		
+		$(".videoPup2").show();
+		$('.videoPup2').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		return false;			
+	});	
+	$(".maskLayer,.closePub").click(function(){
+		$("#popWin").removeClass("videoPup").addClass("videoPup2");
+		$('#popWin').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		$("#videoShow").removeClass("videoShow").addClass("videoShow2");
+		$("object").attr({"width":1100,"height":800});
+		$("embed").attr({"width":1100,"height":800});
+		$(".twoPlus").attr("src","images/twoPlus.gif?gedecache=1");
+		$(".onePlus").attr("src","images/onePlus.gif?gedecache=1");
+		$(".videoPup").hide();	
+		$(".videoPup2").hide();	
+		$(".maskLayer").hide();
+		$("#videoShowWrap").empty();
+		$("#videoShowWrap").append('<div class="loading"></div>');
+		$("#videoShowWrap2").empty();
+		return false;
+	});
+	
+		//弹出层固定在屏幕中央 并随屏滚动
+	$(window).scroll(function(){	
+		$('.videoPup').css({top:function(){	
+			return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+		},left:function(){
+			return ($(window).width()-$(this).width())/2;	
+			}
+		});	
+	});
+    </script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".onePlus").click(function(){
+		$("#popWin").removeClass("videoPup2").addClass("videoPup");
+		$('#popWin').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		$("#videoShow").removeClass("videoShow2").addClass("videoShow");
+		$("object").attr({"width":550,"height":400});
+		$("embed").attr({"width":550,"height":400});
+		$(".twoPlus").attr("src","images/twoPlus1.gif?gedecache=1");
+		$(".onePlus").attr("src","images/onePlus1.gif?gedecache=1")
+	})
+	$(".twoPlus").click(function(){
+		$("#popWin").removeClass("videoPup").addClass("videoPup2");
+		$('#popWin').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		$("#videoShow").removeClass("videoShow").addClass("videoShow2");
+		$("object").attr({"width":1100,"height":800});
+		$("embed").attr({"width":1100,"height":800});
+		$(".twoPlus").attr("src","images/twoPlus.gif?gedecache=1");
+		$(".onePlus").attr("src","images/onePlus.gif?gedecache=1")
+	})
+	
+	$("#pages").html(totalpage);
+	
+});
+</script>
+</body>
+</html>

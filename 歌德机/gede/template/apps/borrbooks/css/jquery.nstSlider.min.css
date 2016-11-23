@@ -1,0 +1,101 @@
+.is_clickable {
+    cursor: hand;
+    cursor: pointer;
+}
+
+.nstSlider {
+    cursor: hand;
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+    width: 1200px;
+    height: 20px;
+    background: #3e6c80;
+    box-shadow: 0px 0px 5px #999 inset;
+    margin: 0px auto;
+    margin-top: 20px;
+    display: none;
+}
+
+.nstSlider .leftGrip.gripHighlighted {
+    background: #113344;
+}
+
+.nstSlider .rightGrip.gripHighlighted {
+    background: #113344;
+}
+
+.nstSlider .rightGrip,
+.nstSlider .leftGrip {
+    position: absolute;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+}
+
+.nstSlider .pagealt:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    top: 50px;
+    border: 10px solid;
+    border-color: #666 transparent transparent #666;
+}
+
+.nstSlider .pagealt {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #fff;
+    border: 2px solid #666;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #888;
+    z-index: 99999;
+    top: -70px;
+    display: none;
+}
+
+.nstSlider .pagealt:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 32px;
+    top: 50px;
+    border: 7px solid;
+    border-color: #fff transparent transparent #fff;
+}
+
+.nstSlider .bar {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: absolute;
+    background: #ffffff;
+    height: 8px;
+    top: 6px;
+}
+
+.nstSlider .highlightPanel {
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: absolute;
+    background: #e87722;
+    height: 20px;
+    top: 0;
+}

@@ -1,0 +1,170 @@
+#login {
+  background-color: rgba(0, 0, 0, 0.6);
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#50000000', EndColorStr='#50000000');
+  height: 0;
+}
+.userContainer {
+  height: 100%;
+  margin: 0 auto 0 auto;
+}
+.userinfo_bg {
+  top: 150px;
+  width: 40.8%;
+  left: 29.6%;
+}
+.user_icon {
+  height: 17.5%;
+  width: 20.8%;
+  left: 39.6%;
+  z-index: 5;
+}
+.user_icon img {
+  height: 90%;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.ie78 .user_icon img {
+  margin-left: 6%;
+  margin-top: 4%;
+}
+.noie78 .user_icon {
+  background-color: yellow;
+  border-radius: 100%;
+  box-shadow: -5px 2px 2px rgba(0, 0, 0, 0.6);
+}
+.ie78 .user_icon {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/user_icon_bg.png', sizingMethod='scale');
+}
+.user_info_body {
+  height: 92%;
+  width: 100%;
+  top: 8%;
+}
+.noie78 .user_info_body {
+  background: url('/Public/imgs/user_info_body.png');
+  background-size: 100% 100%;
+}
+.ie78 .user_info_body {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/user_info_body.png', sizingMethod='scale');
+}
+.placeholder {
+  height: 6%;
+}
+.ie7 .ie7_placeholder {
+  height: 8%;
+}
+.ie7 .user_info_body {
+  position: static;
+}
+.user_vip_level {
+  height: 5%;
+  width: 85%;
+  margin-left: 7.5%;
+  text-align: right;
+  font-size: 3em;
+  font-weight: bold;
+  color: #FE6500;
+}
+.user_vip_level img {
+  height: 100%;
+  width: 13.4%;
+}
+.user_info_message {
+  height: 52.8%;
+  width: 85%;
+  margin-left: 7.5%;
+  margin-top: 2.5%;
+}
+.noie78 .user_info_message {
+  border-radius: 10px;
+  background-color: #FCEBA3;
+  border: 1px solid #C3A04E;
+}
+.ie78 .user_info_message {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/user_info_ms_bg.png', sizingMethod='scale');
+}
+.user_books_info {
+  width: 85%;
+  margin-left: 7.5%;
+  height: 15.5%;
+  margin-top: 3.2%;
+  font-size: 1.7em;
+  color: red;
+}
+.user_store_books,
+.user_knows {
+  margin-top: 1.8%;
+  margin-left: 8%;
+}
+.noie78 .user_books_info {
+  border-radius: 10px;
+  background-color: #FCEBA3;
+  border: 1px solid #C3A04E;
+}
+.ie78 .user_books_info {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/user_books_bg.png', sizingMethod='scale');
+}
+.user_btn {
+  width: 85%;
+  margin-left: 7.5%;
+  height: 11.1%;
+  margin-top: 3.5%;
+}
+.ie78 .user_btn {
+  position: relative;
+}
+.user_btn_common {
+  width: 23%;
+  height: 61.5%;
+}
+.user_btn_loginout {
+  float: right;
+}
+.ie7 .user_btn_save {
+  float: left;
+}
+.input_common {
+  height: 13%;
+  width: 85.5%;
+  margin-top: 4%;
+  margin-left: 8%;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+.ie78 .input_common {
+  position: relative;
+}
+.input_common input[type="text"] {
+  height: 100%;
+  outline: none;
+  border: none;
+  width: 77%;
+}
+.ie78 .input_common input[type="text"] {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/user_ie_input.png', sizingMethod='scale');
+}
+.noie78 .input_common input[type="text"] {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+.input_sex input[type="radio"] {
+  margin-left: 10%;
+}
+.input_sex .img_boy {
+  vertical-align: middle;
+  height: 82%;
+  width: 8%;
+}
+.input_sex .img_girl {
+  vertical-align: middle;
+  height: 79.5%;
+  width: 12.1%;
+}

@@ -1,0 +1,66 @@
+body {
+  background: url('/Public/imgs/library_bg.png') repeat;
+}
+.library_btn {
+  background: url('/Public/imgs/word3_pointer.png') no-repeat;
+}
+.library_btn a {
+  color: black;
+}
+#container {
+  margin: 140px auto 0 auto;
+}
+.ie7 #container {
+  padding-top: 140px;
+}
+.category {
+  margin-bottom: 200px;
+}
+.cate_nav {
+  margin-bottom: 30px;
+}
+.cate_nav img {
+  width: 20%;
+}
+.avatars_bg {
+  width: 70%;
+  background-color: #F5E5D5;
+  border-radius: 10px;
+  vertical-align: top;
+}
+.avatars_bg h3 {
+  font-size: 3em;
+  margin: 10px 0 10px 40px;
+  color: #4E261D;
+}
+.avatars_bg h3 a {
+  color: #4E261D;
+}
+.cate_intro {
+  color: #76726F;
+  margin-left: 40px;
+  text-indent: 2em;
+  font-size: 1.7em;
+  margin-right: 20px;
+  line-height: 1.7em;
+}
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 20px solid #F5E5D5;
+  border-bottom: 15px solid transparent;
+  top: 50%;
+  margin-top: -15px;
+  left: -20px;
+}
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-left: 20px solid #F5E5D5;
+  border-bottom: 15px solid transparent;
+  top: 50%;
+  margin-top: -15px;
+  right: -20px;
+}

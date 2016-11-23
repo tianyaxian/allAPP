@@ -1,0 +1,119 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>少儿图书</title>
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-demos.css">
+    <script src="js/idangerous.swiper-1.9.1.min.js"></script>
+    <script src="js/idangerous.swiper.scrollbar-1.2.js"></script>
+
+   <!-- <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>-->
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/swiper-demos.js"></script>
+</head>
+<body>
+<div class="tittle">
+    <hr>
+    <h1>多媒体互动电子书专题</h1>
+</div>
+<div role="main" class="main" id="mainList">
+    <div class="home-device"><!--<a class="arrow-left" href="#"></a> <a class="arrow-right" href="#"></a>-->
+        <div class="swiper-main" >
+            <div class="swiper-container swiper1">
+                <div class="swiper-wrapper" id="cygs">
+
+                </div>
+                <div class="pagination pagination1"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="home-device" style="background: yellow;display: none;">
+        <div class="swiper-main" >
+            <div class="swiper-container swiper2">
+                <div class="swiper-wrapper" id="gxjd">
+
+                </div>
+            </div>
+        </div>
+        <div class="pagination pagination2"></div>
+    </div>
+    <div class="home-device" style="background: yellow;display: none;"><!--<a class="arrow-left" href="#"></a> <a class="arrow-right" href="#"></a>-->
+        <div class="swiper-main" >
+            <div class="swiper-container swiper3">
+                <div class="swiper-wrapper" id="kpbk">
+                </div>
+            </div>
+        </div>
+        <div class="pagination pagination3"></div>
+        <div class="page">
+            <span id="cpage">1</span>/<span id="page">1</span>
+        </div>
+    </div>
+    <div class="home-device" style="background: yellow;display: none;"><!--<a class="arrow-left" href="#"></a> <a class="arrow-right" href="#"></a>-->
+        <div class="swiper-main" >
+            <div class="swiper-container swiper4">
+                <div class="swiper-wrapper" id="kcwg">
+                </div>
+            </div>
+        </div>
+        <div class="pagination pagination4"></div>
+    </div>
+    <div class="home-device" style="background: yellow;display: none;"><!--<a class="arrow-left" href="#"></a> <a class="arrow-right" href="#"></a>-->
+        <div class="swiper-main" >
+            <div class="swiper-container swiper5">
+                <div class="swiper-wrapper" id="mrgs">
+                </div>
+            </div>
+        </div>
+        <div class="pagination pagination5"></div>
+    </div>
+    <div class="home-device" style="background: yellow;display: none;"><!--<a class="arrow-left" href="#"></a> <a class="arrow-right" href="#"></a>-->
+        <div class="swiper-main" >
+            <div class="swiper-container swiper6">
+                <div class="swiper-wrapper" id="youer">
+
+                </div>
+            </div>
+        </div>
+        <div class="pagination pagination6"></div>
+    </div>
+</div>
+
+<div class="nav">
+    <ul class="navUl">
+        <li>成语故事 </li>
+        <li>国学经典 </li>
+        <li>科普百科 </li>
+        <li>昆虫王国 </li>
+        <li>名人故事 </li>
+        <li>幼儿 </li>
+        <li>中外名著 </li>
+    </ul>
+    <div class="clearfix"></div>
+</div>
+</body>
+<script id="books-template" type="text/x-handlebars-template">
+    {{#each this}}
+    <li><a href="{{app}}" target="_blank"><img src="{{cover}}"  /><p>{{appName}}</p></a></li>
+    {{/each}}
+</script>
+
+<!--<script id="type-template" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="swiper-slide" style="background: #e7e7e7">
+        <ul class="type-book">
+
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    {{/each}}
+</script>-->
+<script type="text/javascript">
+
+</script>
+</html>

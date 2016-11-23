@@ -1,0 +1,26 @@
+CACHE MANIFEST
+# VERSION 2.4
+
+CACHE:
+index.shtml
+css/style.css
+js/index.js
+js/jquery.js
+js/turn.js
+js/ejs.js
+/js/touch.js
+
+images/icons8.png
+images/animal1.jpg
+images/animal2.png
+images/loading.svg
+images/loading1.svg
+images/close.png
+images/line.gif
+images/bookshelf.png
+images/book_li_bg.png
+
+NETWORK:
+*
+
+FAILBACK:

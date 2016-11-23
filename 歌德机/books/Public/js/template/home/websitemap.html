@@ -1,0 +1,43 @@
+<div class='nav_btn inline-block'>
+    <% _.each(links,function(value,key,links){
+        if(!value){return;}
+        if(value.parent_class_id==0 && value.weight==0){%>
+            <div class='common_nav_style'>
+                <h3>
+                    <a target='_blank' href='<%=value.site_url%>'>
+                        <%=value.site_alias%>
+                    </a>
+                </h3>
+                <ul>
+                    <% _.each(links,function(value2,key2,links){
+                        if(!value){return;}
+                        if(value2.parent_class_id==value.id){%>
+                            <li class='inline-block'>
+                                <a target='_blank' href='<%=value2.site_url%>'>
+                                    <%=value2.site_alias%>
+                                </a>
+                            </li>
+                            <%links.splice(key2,1,false)
+                         }
+                    })%>
+               </ul>
+            </div>
+            <%links.splice(key,1,false)
+        }
+    })%>
+</div>
+<div class='recommend inline-block'>
+    <div class='rec_title'>最新推荐</div>
+    <div class='client_load'>
+        <a href='<%=etdk.g.windows%>'>
+            <img src='<%=etdk.g._IMG_%>duku_client_load.png' alt='读酷儿童图书馆客户端下载'/>
+        </a>
+        <a href='http://www.miaomiaoxue.com/files/clientDownload.php?id=20150604'>
+            <img src='<%=etdk.g._IMG_%>miao_client_load.png' alt='秒秒学客户端下载'/>
+        </a>
+    </div>
+</div>
+
+
+
+

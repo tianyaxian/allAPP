@@ -1,0 +1,17 @@
+
+<% _.each(list,function(value,key,list){%>
+<li class='chapter'>
+    <h3><a href='/chapter/<%=value.id%>' target='_blank'><%=value.title%></a></h3>
+    <h4>
+        <i class='icon-pencil'><%=value.author%></i>
+        <i class='icon-price-tags'></i>
+        <i class='icon-clock'></i>
+        <%=new Date(value.create_time * 1000).toLocaleString().replace(/,|AM/g,'')%>
+    </h4>
+    <div class='chapter_desc chapter_desc_list'>
+        <div class='chapter_cover inline-block'>
+            <img src='<%=etdk.g._IMG_%>preloader.gif' onload='etdk.g.delayImg(this,\"<%=value.cover_image%>\")'/></div>
+        <div class='snippet inline-block'><%=value.intro%></div>
+    </div>
+</li>
+<%})%>

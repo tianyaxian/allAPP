@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>古诗词</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/poem.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/gushigain_h.js"></script>
+    <!--[if IE]>
+    <script src="js/html5.js"></script><![endif]-->
+    <!--[if lte IE 8]>
+    <script src="js/IE6Fix.js"></script><![endif]-->
+</head>
+<body class="sublevel">
+<div id="SiteHeader">
+    <div class="default_nav clearfix" style="position: relative;">
+        <a class="logo fl" href="#">
+            双华小学校园阅读系统
+        </a>
+        <div class="nav fl">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td>
+                        <a class="navA current" href="#">首页</a>
+                    </td>
+                    <td>
+                        <a class="navA" href="#">图书</a>
+                    </td>
+                    <td>
+                        <a class="navA" href="#">书单</a>
+                    </td>
+                    <td>
+                        <a class="navA" href="#">专题</a>
+                    </td>
+                    <td>
+                        <a class="navA" href="#">课程</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="user" class="fl">
+            <!-- <a class="login" href="javascript:;">登录</a> -->
+            <img src="img/user.jpg"/>
+            <strong>BlotBlotBlotBlotBlot</strong>
+            <span class="icon-caret-down"></span>
+            <div>
+                <h4>
+                    <a href="">进入空间</a>
+                </h4>
+                <h4>
+                    <a href="">退出登陆</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="default_nav clearfix">
+
+<div class="crumb">
+    <strong>当前位置：</strong>
+    <a href="#">首页</a>&gt;
+    <span>课程</span>
+    <div class="search">
+        <input type="text" name="searchKey" value="请输入检索关键字" onblur="if(this.value==''){this.value='请输入检索关键字'}"
+               onfocus="if(this.value=='请输入检索关键字'){this.value=''}" value="请输入检索关键字"/>
+        <input type="button" value=""/>
+        <span class="icon-search"></span>
+    </div>
+</div>
+<div class="content">
+
+    <div class="tab">
+        <!--一级分类-->
+        <div class="tab_mune">
+            <div class="tab_muneL">一级分类：</div>
+            <div class="tab_muneR">
+                <ul>
+                    <li class="select">全部</li>
+                    <li>按朝代浏览</li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--二级分类-->
+        <div class="tab_box">
+            <div class="boxList" style="display: block">
+                <div class="clear"></div>
+            </div>
+            <div class="boxList" style="display: none">
+                <div class="boxList_left">二级分类：</div>
+                <div class="boxList_right" ids="chaodai">
+                    <ul>
+                        <li class="select first"  idx="汉">汉</li>
+                        <li idx="南北朝">南北朝</li>
+                        <li idx="唐">唐</li>
+                        <li idx="北宋">北宋</li>
+                        <li idx="南宋">南宋</li>
+                        <li idx="元">元</li>
+                        <li idx="明">明</li>
+                        <li idx="清">清</li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!--分类的内容-->
+    <div class="swiper-container1" >
+        <div class="swiper-wrapper" id="swiperW" style="display: none">
+
+        </div>
+    </div>
+    <div id="Searchresult">
+
+    </div>
+    <div class="clear"></div>
+    <div class="pages" id="pages"></div>
+</div>
+</section>
+<footer id="SiteFooter">
+    <div class="default_nav clearfix">
+        <ul>
+            <li>
+                <a href="#">校园阅读系统</a>
+            </li>
+            <li>
+                <a href="#">常见问题</a>
+            </li>
+            <li>
+                <a href="#">联系我们</a>
+            </li>
+            <li>
+                <a href="#">意见反馈</a>
+            </li>
+        </ul>
+        <span>COPYRIGHT &copy; <s>basicedu.com</s> ALL RIGHTS RESERVED. | 京ICP备 13046642号-2</span>
+    </div>
+</footer>
+<a href="javascript:;" id="qrcode" onmouseenter="pupopen()" onmouseleave="pupclose()">
+    <span class="icon-qrcode"></span>
+    <strong>移动APP</strong>
+</a>
+<div id="qrcodeImg"></div>
+<a href="javascript:;" id="top">
+    <span class="icon-rocket"></span>
+    <strong>返回顶部</strong>
+</a>
+<!--新闻弹窗 begin-->
+<div class="videoPup2" id="popWin" style="display: none">
+    <img src="img/close.gif?gedecache=1" class="closePub" style="right:-47px;" />
+    <div id="videoShowWrap"></div>
+</div>
+<!--蒙版开始-->
+<div class="maskLayer" style="display: none"></div>
+<script src="js/swfobject_h.js?"></script>
+<script src="js/jquery.pagination.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/equery_1.4.min.js"></script>
+<script>
+    function pupopen() {
+        document.getElementById("qrcodeImg").style.display = "block";
+    }
+    function pupclose() {
+        document.getElementById("qrcodeImg").style.display = "none";
+    }
+    function gotop() {
+        toTop('top', false);
+    }
+    addLoadEvent(gotop);
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        /*加载全部内容*/
+        function loadAllContent(){
+            $(".swiper-wrapper").empty();//每次进来清空swiper-wrapper中的内容
+            var str="";
+            for(var i=0;i<books.list.length;i++){
+                    if (i%16==0){
+                        str+='<div class="swiper-slide">';
+                        str+="<ul>"
+                    }
+                    str+='<li><input type="hidden" value="'+books.list[i].id+'"> <img class="imgcont" title="'+books.list[i].title+'" src="'+urlType+urlimg+books.list[i].id+imgType+'" />' +
+                            '<strong>'+books.list[i].title+'('+books.list[i].chaodai+'·'+books.list[i].author+')</strong></li>';
+                    if (i % 16 ==15) {
+                        str += '</ul>';
+                        str+='</div>';
+                    }
+            }
+            if (books.list.length % 16 != 0) {
+                str += '</ul>';
+                str += '</div>';
+            }
+            $(".swiper-wrapper").append(str);
+        }
+        loadAllContent();
+
+       /*分类内容*/
+
+        function loadContent(classfy,idx){
+            $(".swiper-wrapper").empty();//每次进来清空swiper-wrapper中的内容
+            var num=0;
+            var str="";
+            for(var i=0;i<books.list.length;i++){
+                if(books.list[i][classfy]==idx){
+                    if (num%16==0){
+                        str+='<div class="swiper-slide">';
+                        str+="<ul>"
+                    }
+                    str+='<li><input type="hidden" value="'+books.list[i].id+'"> <img class="imgcont" title="'+books.list[i].title+'" src="'+urlType+urlimg+books.list[i].id+imgType+'" />' +
+                            '<strong>'+books.list[i].title+'('+books.list[i].chaodai+'·'+books.list[i].author+')</strong></li>';
+                    if (num % 16 ==15) {
+                        str += '</ul>';
+                        str+='</div>';
+                    }
+                    num+=1;
+                }
+            }
+            if (num % 16 != 0) {
+                str += '</ul>';
+                str += '</div>';
+            }
+            $(".swiper-wrapper").append(str);
+        }
+
+
+        /*类别切换*/
+        var $div_li =$("div.tab_muneR ul li");
+        $div_li.click(function(){
+            $(this).addClass("select").siblings().removeClass("select");
+            var index =  $div_li.index(this);
+            $("div.tab_box  >.boxList").eq(index).children(".boxList_right").children("ul").children(".first").addClass("select").siblings().removeClass("select");
+            $("div.tab_box  >.boxList").eq(index).show(0,function(){
+                var idsConF= $(this).children(".boxList_right").attr("ids");
+                var liFirst=$(this).children(".boxList_right").children("ul").children(".first").attr("idx");
+                loadContent(idsConF,liFirst);
+                console.log(idsConF,liFirst);
+                var new_content = $("#swiperW div.swiper-slide:eq(0)").clone();
+                $("#Searchresult").empty().append(new_content); //装载对应分页的内容 page_index
+                pages();
+                video();
+            }).siblings().hide();
+        });
+
+        /*点击类别时加载对应的内容*/
+        $(".boxList_right li").click(function(){
+            $(this).addClass("select").siblings().removeClass("select");
+            var idxNum=$(this).attr("idx");
+            var idsCon=$(this).parents(".boxList_right").attr("ids");
+            loadContent(idsCon,idxNum);
+            console.log(idsCon,idxNum);
+            pages();
+        });
+
+
+        /*页码*/
+        function pages(){
+            var initPagination = function() {
+                var num_entries = $("#swiperW div.swiper-slide").length;
+                // 创建分页
+                $("#pages").pagination(num_entries, {
+                    num_edge_entries: 1, //边缘页数
+                    num_display_entries: 4, //主体页数
+                    callback: pageselectCallback,
+                    items_per_page:1 //每页显示1项
+                });
+            }();
+            function pageselectCallback(page_index, jq){
+                var new_content = $("#swiperW div.swiper-slide:eq("+page_index+")").clone();
+                $("#Searchresult").empty().append(new_content); //装载对应分页的内容 page_index
+                video();
+                return false;
+            }
+        }
+        pages();
+        /*弹窗内容*/
+        function makehtml(id,title){
+            var swfstr="";
+            var swfstr2="";
+            swfstr+='<h2>'+title+'</h2><div class="videoShow2" id="videoShow">' +
+                    '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cabversion=6,0,0,0" width="51100" height="800">' +
+                    '<param name="movie" value="'+urlType1+urlswf+id+swfType+'">' +
+                    '<param name="bgcolor" value="#3d3d3d">' +
+                    '<param name="quality" value="high">' +
+                    '<param name="menu" value="false">' +
+                    '<param name=wmode value="opaque">' +
+                    '<embed src="'+urlType1+urlswf+id+swfType+'" wmode="opaque" menu="false" bgcolor="#3d3d3d" quality="high" class="videoCon"  type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />' +
+                    '</object>' +
+                    '</div>';
+            $("#videoShowWrap").append(swfstr);
+        }
+        /*弹窗*/
+        function video(){
+            $("#Searchresult li").click(function () {
+                $("#videoShowWrap").empty();//清空videoShowWrap中的内容
+                var tittle = $(this).text();
+                makehtml($(this).children("input").val(), tittle);
+
+                $(".maskLayer").show();
+                if ($(".maskLayer").css('display') == 'block') {
+                    $(".maskLayer").fadeTo('fast', 0.8);
+                    $('.maskLayer').height($(document).height());
+                }
+                $(".videoPup2").show();
+            });
+        }
+        video();
+/*关闭窗口*/
+        $(".maskLayer,.closePub").click(function () {
+            $(".videoPup2").hide();
+            $(".maskLayer").hide();
+            $("#a1").empty();
+            $("#videoShowWrap").append('<div class="loading"></div>');
+            $("#videoShowWrap2").empty();
+            return false;
+        });
+        $(window).scroll(function () {
+            $('.videoPup').css({
+                top: function () {
+                    return ($(window).height() - $(this).height()) / 2 + $(window).scrollTop();
+                }, left: function () {
+                    return ($(window).width() - $(this).width()) / 2;
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

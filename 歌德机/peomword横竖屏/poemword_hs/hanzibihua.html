@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+<meta charset="utf-8">
+<title>小学常用汉字识字拼写</title>
+<link href="css/style.css?gedecache=3" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/idangerous.swiper.css?gedecache=1">
+	<script language=javascript>
+		if(screen.width<='1080')
+			window.location = "hanzibihua_s.html";
+	</script>
+<style>
+html,body{height:100%; width:100%;overflow:hidden;}
+.pagination {position:fixed; z-index: 20; right:80px; bottom: 52px; text-align:right; width:100%;}
+.swiper-pagination-switch { display: inline-block;width: 12px;height: 12px;border-radius:50%;background: #999; margin:0 8px; opacity: 0.8;cursor: pointer;}
+.swiper-visible-switch {background: #aaa;}
+.swiper-active-switch {background: #0e6fe7;}
+.swiper-container{width:100%; height:100%;}
+.device{width:100%; height:100%; position:absolute; top:0; left:0;}
+.bookPup canvas{
+	margin: 0 150px;
+}
+.iframe{
+	height:762px;
+	width:858px;
+	border: 1px solid #E8E8E8;
+}
+</style>
+</head>
+</head>
+
+<body onselectstart="return false;" oncontextmenu="return false;" style="-moz-user-select:none;overflow-y:hidden;">
+<!--2015.8.26添加-->
+<div id="show" style="width:100%; height:100%; position:absolute; left:0; top:0; z-index:99; display:none;"></div>
+<!--2015.8.26添加-->
+	<!--加载 2014.11.17-->
+	<!--<div class="onload" style="display:none;">
+    	<a href="javascript:window.stop();$('.onload').css('display','none');" class="fr load_rt"></a>
+        <img src="images/load.png?gedecache=1" class="load"/>正在加载请稍后
+    </div>-->
+    <!--加载-->
+	<div class="bookMain">
+        <div class="header clearfix">
+            <span class="fr">识字拼写</span>
+            <h2 class="fl">小学常用汉字识字拼写</h2>
+        </div>
+        <div class="device">
+        <div class="swiper-container">
+          <div class="swiper-wrapper"></div>
+          <div class="pagination" style="display:none;"></div>
+          <div class="page">
+          	<span id="cpage">1</span>/<span id="pages">21</span>
+          </div>
+       </div>
+       </div>
+    </div>
+	<a href="../ztbook/home/index.html?gedecache=1" style="z-index:99999;" class="help"><img src="images/icons4.png?gedecache=1" class="png_box" /><p>返回</p></a>
+    <div class="chaoDaiClassify">
+    	<ul>
+        	<li><a href="hanzi.html?gedecache=4">按册浏览</a></li>
+            <li class="cur"><a href="hanzibihua.html?gedecache=4">按笔画数</a></li>
+            <li><a href="hanzishouzimu.html?gedecache=4">按首字母</a></li>
+        </ul>
+    </div>
+    
+    <div class="Colle_con clearfix" id="Colle_con" style="left:668px;">
+        <div>
+        <div class="screen">
+            <ul class="conveyer bihua clearfix">
+                <li class="cur"><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li><li><a>10</a></li>
+				<li><a>11</a></li><li><a>12</a></li><li><a>13</a></li><li><a>14</a></li><li><a>15</a></li><li><a>16</a></li><li><a>17</a></li><li><a>18</a></li><li><a>19</a></li><li><a>20</a></li>
+				<li><a>21</a></li><li><a>22</a></li><li><a>23</a><li><a>24</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <!--新闻弹窗 begin-->
+    <div class="videoPup2" id="popWin">
+    	<img src="images/close.gif?gedecache=1" class="closePub" style="right:-47px;" />
+        <!-- <img src="images/twoPlus.gif?gedecache=1" class="twoPlus">
+        <img src="images/onePlus.gif?gedecache=1" class="onePlus"> -->
+    	<div id="videoShowWrap"></div>
+    </div>
+    
+    <!--蒙版开始-->
+    <div class="maskLayer"></div>
+    <!--蒙版结束-->
+    <!--新闻弹窗 end-->
+    <script src="js/jquery-1.7.2.min.js?gedecache=1"></script>
+	<script src="js/swfobject.js?gedecache=1"></script>
+    <script src="js/hanzigain.js?gedecache=4"></script>
+    <script src="js/hanzibihua.js?gedecache=1"></script>
+    <script><!--新闻弹窗脚本-->
+	var cataid="";
+	var page=1;
+	var pageSize=28;
+	var totalpage=$(".swiper-slide").length;
+	//分类
+	$(".conveyer li").click(function(){
+		$(this).siblings().removeClass("cur");
+		$(this).addClass("cur");
+	});
+	function catabooks(cataid){
+		page=1;
+		$("#cpage").text(page);
+	}
+	//下一页
+	function nextPage(){
+		page++;
+		$("#cpage").text(page);
+		if(page == totalpage){
+			mySwiper.swipeTo(totalpage);
+			//alert("最后一页");
+			return;
+		}
+		
+	}
+	//上一页
+	function prevPage(){
+		page--;
+		$("#cpage").text(page);
+		if(page==1){
+			mySwiper.swipeTo(0);
+			//alert("第一页");
+			return;
+		}
+		
+	}
+	//页码跳转
+	function jumpPage(num){
+		$("#cpage").text(num);
+		mySwiper.swipeTo(num);
+	}
+    </script>
+    <script src="js/idangerous.swiper-2.1.min.js?gedecache=1"></script>
+	<script>
+	var onOff=null;/*2015.8.26添加*/
+    var mySwiper = new Swiper('.swiper-container',{
+      pagination: '.pagination',
+      paginationClickable: true,
+      loop:false,
+      onSlideNext:function(swiper){
+    	  nextPage();
+		/*2015.8.26添加*/
+		$("#show").show();
+	  	clearTimeout(onOff);
+		  onOff = setTimeout(function(){
+			 $("#show").hide(); 
+		  },300)
+    	/*2015.8.26添加*/  	  
+      },
+      onSlidePrev:function(swiper){
+    	  prevPage();
+		  /*2015.8.26添加*/
+		  $("#show").show();
+		  clearTimeout(onOff);
+		  onOff = setTimeout(function(){
+			 $("#show").hide(); 
+		  },300)
+		  /*2015.8.26添加*/
+      }
+    });
+    function picPrev() {
+    	prevPage();
+    }
+    function picNext() {
+    	nextPage();
+    }
+    </script> 
+<script><!--新闻弹窗脚本-->
+	$(".videoBox li").click(function(){
+		makehtml($(this).children("input").val(),$(this).text());
+		
+		$(".maskLayer").show();		
+		if($(".maskLayer").css('display')=='block'){
+			$(".maskLayer").fadeTo('fast',0.4);
+			$('.maskLayer').height($(document).height());
+		}		
+		$(".videoPup2").show();
+		$('.videoPup2').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		return false;			
+	});	
+	$(".maskLayer,.closePub").click(function(){
+		$("#popWin").removeClass("videoPup").addClass("videoPup2");
+		$('#popWin').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		$("#videoShow").removeClass("videoShow").addClass("videoShow2");
+		$("object").attr({"width":1100,"height":800});
+		$("embed").attr({"width":1100,"height":800});
+		$(".twoPlus").attr("src","images/twoPlus.gif?gedecache=1");
+		$(".onePlus").attr("src","images/onePlus.gif?gedecache=1");
+		$(".videoPup").hide();	
+		$(".videoPup2").hide();	
+		$(".maskLayer").hide();
+		$("#videoShowWrap").empty();
+		$("#videoShowWrap2").empty();
+		return false;
+	});
+	
+		//弹出层固定在屏幕中央 并随屏滚动
+	$(window).scroll(function(){	
+		$('.videoPup').css({top:function(){	
+			return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+		},left:function(){
+			return ($(window).width()-$(this).width())/2;	
+			}
+		});	
+	});
+    </script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+     $(".onePlus").click(function(){
+		$("#popWin").removeClass("videoPup2").addClass("videoPup");
+		$('#popWin').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		$("#videoShow").removeClass("videoShow2").addClass("videoShow");
+		$("object").attr({"width":550,"height":400});
+		$("embed").attr({"width":550,"height":400});
+		$(".twoPlus").attr("src","images/twoPlus1.gif?gedecache=1");
+		$(".onePlus").attr("src","images/onePlus1.gif?gedecache=1")
+	})
+	$(".twoPlus").click(function(){
+		$("#popWin").removeClass("videoPup").addClass("videoPup2")
+		$('#popWin').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		$("#videoShow").removeClass("videoShow").addClass("videoShow2");
+		$("object").attr({"width":1100,"height":800});
+		$("embed").attr({"width":1100,"height":800});
+		$(".twoPlus").attr("src","images/twoPlus.gif?gedecache=1");
+		$(".onePlus").attr("src","images/onePlus.gif?gedecache=1")
+	})
+	
+	$("#pages").html(totalpage);
+	
+	/*点击朝代翻页开始*/
+	$(".screen ul li").click(function(){
+		var listr=$(this).text();
+		var leftIcon=$(".swiper-wrapper").find(".leftIcon1").length;
+		for(var i=0;i<leftIcon;i++){
+			var leftIconP=$(".leftIcon1 p").eq(i).text();
+			if(leftIconP==listr){
+				var swiperSlideIndex=$(".leftIcon1").eq(i).parent().parent().parent().index();
+				page=swiperSlideIndex+1;
+				jumpPage(page);	
+				var aa=-1920*swiperSlideIndex+"px";
+				eval('$(".swiper-wrapper").css({"transform":"translate3d('+aa+', 0px, 0px)","transition-duration":"0.3s"})');
+				eval('$(".swiper-wrapper").css({"-ms-transform":"translate3d('+aa+', 0px, 0px)","-ms-transition-duration":"0.3s"})');
+				eval('$(".swiper-wrapper").css({"-moz-transform":"translate3d('+aa+', 0px, 0px)","-moz-transition-duration":"0.3s"})');
+				eval('$(".swiper-wrapper").css({"-webkit-transform":"translate3d('+aa+', 0px, 0px)","-webkit-transition-duration":"0.3s"})');
+				eval('$(".swiper-wrapper").css({"-o-transform":"translate3d('+aa+', 0px, 0px)","-o-transition-duration":"0.3s"})');
+			}
+		}
+	});
+/*点击朝代翻页结束*/
+});
+</script>
+
+</body>
+</html>

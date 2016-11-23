@@ -1,0 +1,179 @@
+#login {
+  background-color: rgba(0, 0, 0, 0.6);
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#50000000', EndColorStr='#50000000');
+  height: 0;
+}
+.loginContainer {
+  height: 100%;
+  margin: 0 auto 0 auto;
+}
+.login_bg {
+  width: 45.6%;
+  margin-left: 27.2%;
+  top: 130px;
+}
+.noie78 .login_bg {
+  background: url('/Public/imgs/reg_login_bg.png');
+  background-size: 100% 100%;
+}
+.ie78 .login_bg {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/reg_login_bg.png', sizingMethod='scale');
+}
+.ie7 .login_bg {
+  position: static;
+  margin-top: 130px;
+}
+.login_content {
+  width: 43.5%;
+  left: 26.5%;
+  top: 36%;
+  height: 29%;
+}
+.login-input {
+  height: 28%;
+  width: 100%;
+  margin-bottom: 7.5%;
+}
+.login-input input {
+  width: 81%;
+  height: 100%;
+  margin-left: 19%;
+  background-color: transparent;
+  outline: none;
+  padding: 0;
+  font-size: 1.5em;
+  border: none;
+}
+.ie78 .login-input input {
+  position: absolute;
+  height: 28%;
+}
+.login-input_password2 {
+  display: none;
+}
+.noie78 .login-input_username,
+.noie78 .find_account {
+  background: url('/Public/imgs/user_name.png');
+  background-size: 100% 100%;
+}
+.noie78 .login-input_password,
+.noie78 .login-input_password2 {
+  background: url('/Public/imgs/password.png');
+  background-size: 100% 100%;
+}
+.ie78 .login-input_username,
+.ie78 .find_account {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/user_name.png', sizingMethod='scale');
+}
+.ie78 .login-input_password,
+.ie78 .login-input_password2 {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/password.png', sizingMethod='scale');
+}
+.find-password {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #633000;
+  text-align: right;
+}
+.find_account {
+  display: none;
+}
+.login-other {
+  width: 41%;
+  left: 26.5%;
+  top: 36%;
+  height: 7%;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: underline;
+  color: #633000;
+  margin-top: 2%;
+}
+.register-prompt {
+  display: none;
+  width: 90%;
+  height: 100%;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+.login-weibo {
+  margin-right: 15%;
+}
+.login_btn {
+  width: 100%;
+  height: 36%;
+  margin-top: 30%;
+}
+.login_btn_common {
+  height: 22%;
+  width: 17.5%;
+}
+.login_btn_reg {
+  left: 18%;
+  top: 24%;
+}
+.login_btn_close {
+  left: 40%;
+  top: 2%;
+}
+.login_btn_login {
+  left: 68%;
+  top: -45%;
+}
+.login_btn_cancel {
+  left: 18%;
+  top: -20%;
+  display: none;
+}
+.login_btn_commit {
+  left: 69%;
+  top: -22%;
+  display: none;
+}
+.noie78 .login_btn_reg {
+  background: url('/Public/imgs/login_btn_reg.png');
+}
+.noie78 .login_btn_close {
+  background: url('/Public/imgs/login_btn_close.png');
+}
+.noie78 .login_btn_login {
+  background: url('/Public/imgs/login_btn_login.png');
+}
+.noie78 .login_btn_cancel {
+  background: url('/Public/imgs/login_btn_cancel.png');
+}
+.noie78 .login_btn_commit {
+  background: url('/Public/imgs/login_btn_commit.png');
+}
+.noie78 .login_btn_common {
+  background-size: 100% 100%;
+}
+.ie78 .login_btn_reg {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/login_btn_reg.png', sizingMethod='scale');
+}
+.ie78 .login_btn_close {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/login_btn_close.png', sizingMethod='scale');
+}
+.ie78 .login_btn_login {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/login_btn_login.png', sizingMethod='scale');
+}
+.ie78 .login_btn_cancel {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/login_btn_cancel.png', sizingMethod='scale');
+}
+.ie78 .login_btn_commit {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Public/imgs/login_btn_commit.png', sizingMethod='scale');
+}
+.warning {
+  width: 32%;
+  height: 8%;
+  top: 57%;
+  left: 26.5%;
+  color: red;
+  font-size: 1.2em;
+  display: none;
+}

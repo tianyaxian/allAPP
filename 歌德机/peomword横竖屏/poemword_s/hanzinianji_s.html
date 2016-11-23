@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>小学常用汉字识字拼写</title>
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/hanzi_s.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="bookMain">
+    <div class="header clearfix">
+        <span class="rightF">识字拼写</span>
+        <h2 class="leftF">小学常用汉字识字拼写</h2>
+    </div>
+</div>
+<div class="box">
+	<div class="main" id="main"></div>
+</div>
+<div class="operation">
+	<a href="../ztbook/home/index.html?gedecache=1" style="z-index:99999;" class="help"><img src="images/icons4.png" class="png_box" /><p>返回</p></a>
+    <div class="chaoDaiClassify">
+        <ul>
+            <li class="cur"><a href="hanzinianji_s.html">按册浏览</a></li>
+            <li><a href="hanzibihua_s.html">按笔画数浏览</a></li>
+            <li><a href="hanzishouzimu_s.html">按首字母浏览</a></li>
+        </ul>
+    </div>
+</div>
+<div class="shaixuan">
+	<ul>
+    	<li class="cur">第一册</li>
+        <li>第二册</li>
+        <li>第三册</li>
+        <li>第四册</li>
+        <li>第五册</li>
+        <li>第六册</li>
+        <li>第七册</li>
+        <li>第八册</li>
+        <li>第九册</li>
+        <li>第十册</li>
+        <li>十一册</li>
+        <li>十二册</li>
+    </ul>
+    <div class="btn">导航</div>
+</div>
+<!--新闻弹窗 begin-->
+<div class="videoPup2" id="popWin">
+    <img src="images/close.gif?gedecache=1" class="closePub" />
+    <div id="videoShowWrap"></div>
+</div>
+<!--蒙版开始-->
+<div class="maskLayer"></div>
+<!--蒙版结束-->
+<!--新闻弹窗 end-->
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/hanzigain_s.js"></script>
+<script src="js/hanzinianji_s.js"></script>
+<script src="js/hanziJs_s.js"></script>
+<script><!--弹窗脚本-->
+	$(".ulWrap li").click(function(){
+		makehtml($(this).children("input").val(),$(this).text());
+		$(".maskLayer").show();		
+		if($(".maskLayer").css('display')=='block'){
+			$(".maskLayer").fadeTo('fast',0.4);
+			$('.maskLayer').height($(document).height());
+		}		
+		$(".videoPup2").show();
+		$('.videoPup2').css({left:function(){
+				return ($(window).width()-$(this).width())/2;
+			},top:function(){
+				return ($(window).height()-$(this).height())/2+$(window).scrollTop();	
+			}
+		});
+		return false;			
+	});	
+	$(".maskLayer,.closePub").click(function(){
+		$(".videoPup2").hide();	
+		$(".maskLayer").hide();
+		$("#videoShowWrap").empty();
+		$("#videoShowWrap").append('<div class="loading"></div>');
+		$("#videoShowWrap2").empty();
+		return false;
+	});
+</script><!--弹窗脚本-->
+</body>
+</html>

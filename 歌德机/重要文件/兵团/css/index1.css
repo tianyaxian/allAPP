@@ -1,0 +1,159 @@
+@charset "utf-8";
+.Head{width:100%; height:50px; margin:0 auto; background-color: #272727; }
+.indexHead{ width: 1000px;margin:0 auto;height: 50px;color: white;}
+.indexHead .nav{ overflow:hidden; float: left; color: white}
+.indexHead .nav li{ padding:19px 25px 0 25px; margin-left:10px; float:left; height:31px; line-height:14px; font-size:16px;}
+.indexHead .nav li a{  color: white}
+.indexHead .nav li:hover{background:#0060d6; color: white;}
+.indexHead .nav li:hover a{ border-bottom:3px solid #17a06c; height:37px; display:block; position:relative;color: white; }
+.indexHead .nav li.cur{ background:#0060d6; color:white;}
+.indexHead .nav li.cur a{color:white;  height:37px; display:block; position:relative;}
+.indexHead .login{ overflow: hidden; float: right;    height: 25px;  line-height: 30px;  margin-top: 13px;color: white}
+.indexHead .login li a{ color: white;}
+.indexHead .login li{  padding: 0px 6px 0 0px;  margin-left: 10px;  float: left;  height: 19px;  line-height: 19px;  font-size: 16px;  margin-top: 2px;}
+.indexHead .login li.log{border-right: 1px solid white;}
+.indexHead .login li:hover{background:#f6f6f6; color:#17a06c;}
+.indexHead .login li:hover a{color:#17a06c;  height:37px; display:block; position:relative;}
+.indexHead .login li.cur{ background:#f6f6f6; color:#17a06c;}
+.indexHead .login li.cur a{color:#17a06c;  height:37px; display:block; position:relative;}
+
+
+.banner{width:100%; height:300px; background:url(../images/banner.jpg) center center no-repeat;}
+.banner .logBoxWrap{width:1000px; height:252px; margin:0 auto; padding-top:24px;display: none;}
+.banner .logBox{width:220px; height:230px; border-top:2px solid #17a06c; float:right; background:#fff; padding:20px 0 0 20px; border-radius:4px; -webkit-border-radius:4px; filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8; opacity: 0.8;}
+.banner .logBox p{ font-size:16px; color:#333; font-weight:bold;}
+.banner .logBox p span{ font-size:14px;}
+.banner .logBox .cur{ box-shadow:0 0 4px 4px #c0dffe;}
+.banner .logBox .userName{width:198px; height:34px; border:1px solid #b2b2b2;border-radius:4px; -webkit-border-radius:4px; margin-top:16px;}
+.banner .logBox .userName .icon{width:34px; height:34px; background:url(../images/indexIcon.png) 0 0 no-repeat; border-radius:4px 0 0 4px; -webkit-border-radius:4px 0 0 4px; float:left;}
+.banner .logBox .userName input{width:150px; height:34px; line-height:34px; float:left; margin-left:10px; font: 12px/34px '宋体'; color:#666; border:none;}
+.banner .logBox .pwd{width:198px; height:34px; border:1px solid #b2b2b2;border-radius:4px; -webkit-border-radius:4px; margin-top:18px; margin-bottom:16px;}
+.banner .logBox .pwd .icon{width:34px; height:34px; background:url(../images/indexIcon.png) -40px 0 no-repeat; border-radius:4px 0 0 4px; -webkit-border-radius:4px 0 0 4px; float:left;}
+.banner .logBox .pwd input{width:150px; height:34px; line-height:34px; float:left; margin-left:10px; font: 12px/34px '宋体'; color:#666; border:none;}
+.banner .logBox .forgetPwd{ float:right; color:#1a9f52;}
+.banner .logBox .btn1{width:200px; height:36px; float:left;border-radius:4px; -webkit-border-radius:4px; text-align:center; line-height:36px; color:#fff; font-size:14px; margin-top:12px; cursor:pointer; background:#17a06c;}
+.banner .logBox .photo{width:90px; height:90px; float:left; padding-right:20px;}
+.banner .logBox .photo img{width:90px; height:90px;border-radius:4px; -webkit-border-radius:4px;}
+.banner .logBox .btn2{width:36px; height:20px; background:#d7d7d7; text-align:center; line-height:20px; font-size:14px; color:#666; cursor:pointer;border-radius:4px; -webkit-border-radius:4px; margin-top:46px;}
+.framecontent {height: auto;margin: 0 auto;overflow: hidden;width: 100%;}
+.framecblock1 {height: auto;margin-top: 20px;overflow: hidden;width: 100%;}
+.framecblock2 {height: auto;overflow: hidden;width: 100%;}
+
+.cgzsAndTzgg{width:1000px; height:auto; margin:0 auto;}
+.chengGuoShow{width:640px; float:left;}
+.chengGuoShow .pic{width:248px; height:228px; margin-top:9px; position:relative; border:1px solid #dbdbdb;}
+.chengGuoShow .pic .des{width:240px; height:30px; background:url(../images/bg1.png) repeat-x; position:absolute; left:-1px; bottom:-1px; font:14px/30px '微软雅黑'; color:#ffffff; padding-left:10px; overflow:hidden; white-space:nowrap;text-overflow: ellipsis;}
+.chengGuoShow .ulList{width:360px; float:right; margin-top:9px;}
+.chengGuoShow .ulList li{width:360px;height:28px;+height:24px; font:14px/28px '微软雅黑'; +line-height:24px; color:#333;overflow:hidden; white-space:nowrap;text-overflow: ellipsis;}
+.chengGuoShow .ulList li a{width:314px; display:block; float:left; overflow:hidden; white-space:nowrap; text-overflow: ellipsis;font:14px/26px '微软雅黑'; color:#343434;}
+.chengGuoShow .ulList li a:hover{color:#17a06c;}
+.chengGuoShow .ulList li em{width:27px; height:11px; display:block; margin-top:9px; float:left; background:url(../images/indexIcon.png) -80px 0 no-repeat;animation:anitop linear 1s infinite alternate;-moz-animation:anitop linear 1s infinite alternate;
+    -webkit-animation:anitop linear 1s infinite alternate;; -o-animation:anitop linear 1s infinite alternate;}
+.chengGuoShow .ulList li i{width:27px; height:11px; display:block; margin-top:9px; float:left; background:url(../images/indexIcon.png) -80px -16px;animation:anitop linear 1s infinite alternate;-moz-animation:anitop linear 1s infinite alternate;
+    -webkit-animation:anitop linear 1s infinite alternate;; -o-animation:anitop linear 1s infinite alternate;}
+.chengGuoShow .ulList li span{width:4px; height:4px; background:#17a06c; display:block; float:left; margin-right:10px; margin-top:12px; border-radius:4px; -webkit-border-radius:4px;}
+.chengGuoShow .dlList{width:360px; overflow:hidden; float:right; margin-top:6px; padding-bottom:12px; border-bottom:1px dashed #cdcdcd;}
+.chengGuoShow .dlList dt{ font-size:18px; color:#17a06c; line-height:30px;}
+.chengGuoShow .dlList dt a{ font-size:18px; color:#17a06c;}
+.chengGuoShow .dlList dd{ font-size:12px; color:#676767; line-height:22px;}
+.chengGuoShow .dlList dd a{color:#17a06c;}
+.tongZhiGongGao{width:320px; float:right;}
+.tongZhiGongGao ul{ padding-top:3px; overflow:hidden;}
+.tongZhiGongGao ul li{height:30px;font-size:14px; color:#666666; line-height:30px; position:relative;vertical-align:bottom;}
+
+.tongZhiGongGao ul li .time{width:40px; height:14px; float:left; text-align:center; line-height:14px; font-size:12px; color:#fff; background:#c8c8c8; border-radius:2px; -moz-border-radius:2px; margin-top:8px;}
+.tongZhiGongGao ul li .nearTime{background:#0060d6; }
+.tongZhiGongGao ul li a{width:260px;display:block; float:left;font-size:14px; color:#333; line-height:28px;overflow:hidden; white-space:nowrap; text-overflow: ellipsis; padding-left:10px; }
+@keyframes anitop{
+    0%{margin-top:9px;}
+    50%{margin-top:6px;}
+    100%{margin-top:9px;}
+}
+@-webkit-keyframes anitop{
+    0%{margin-top:9px;}
+    50%{margin-top:6px;}
+    100%{margin-top:9px;}
+}
+@-moz-keyframes anitop{
+    0%{margin-top:9px;}
+    50%{margin-top:6px;}
+    100%{margin-top:9px;}
+}
+@-o-keyframes anitop{
+    0%{margin-top:9px;}
+    50%{margin-top:6px;}
+    100%{margin-top:9px;}
+}
+/*学习空间*/
+.learnZone{width:1000px; height:auto; margin:30px auto 0 auto; overflow:hidden; position:relative;}
+
+
+
+.learnZone .lzTabBox{padding-top:10px; float:left;width:998px; display:none; border: 1px solid #e4e2e2;}
+.learnZone .lzTabBox ul{ overflow:hidden; margin-right:-60px;}
+.learnZone .lzTabBox li{width:225px; height:177px; float:left; margin-left: 20px;  margin-top: 10px;  margin-bottom: 20px; text-align:center;background: #e4e2e2}
+.learnZone .lzTabBox li img{ display: block;width: 225px;height: 132px;}
+.learnZone .lzTabBox li:hover p{color:#17a06c;}
+.learnZone .lzTabBox li a{ display:block;}
+.learnZone .lzTabBox li p{ line-height:16px; padding-top:13px; text-align:center; color:#333333;font-size: 18px;}
+
+
+
+.learnZone .latestOpenT{ font-size:14px; font-weight:bold;}
+.learnZone .latestOpen{ overflow:hidden;}
+.learnZone .latestOpen li{width:160px; float:left; height:14px; line-height:14px; color:#4a4a4a; padding-top:14px;}
+.learnZone .latestOpen li span{width:4px; height:4px; background:#17a06c; display:block; float:left; margin-right:6px; margin-top:5px; border-radius:4px; -webkit-border-radius:4px;}
+.learnZone .latestOpen li a{width:140px; float:left; height:14px; display:block; overflow:hidden; white-space:nowrap;text-overflow: ellipsis;}
+/*学习空间*/
+/*教学资源*/
+.teachResource{width:1000px; height:auto; margin:30px auto 0 auto; overflow:hidden; position:relative;}
+.teachResource .teachList{width:1010px;overflow: hidden;}
+.teachResource .teachList .teachListOne{float: left;width: 240px;height: 277px; margin-right: 12px;margin-top: 5px;}
+.teachResource .teachList .teachListOne .hOne{ height: 80px;line-height: 80px;background:#fd6720  url("../images/teach.png") no-repeat 47px center;text-align: center;
+color: white;padding-left: 45px;}
+.teachResource .teachList .teachListOne .hTwo{ height: 80px;line-height: 80px;background:#f56f73  url("../images/teach1.png") no-repeat 47px center;text-align: center;
+    color: white;padding-left: 45px;}
+.teachResource .teachList .teachListOne .hThree{ height: 80px;line-height: 80px;background:#3383e4  url("../images/teach2.png") no-repeat 47px center;text-align: center;
+    color: white;padding-left: 45px;}
+.teachResource .teachList .teachListOne .hFour{ height: 80px;line-height: 80px;background:#00a3c1  url("../images/teach3.png") no-repeat 47px center;text-align: center;
+    color: white;padding-left: 45px;}
+
+.teachResource .teachList .teachListOne ul{   border: 1px solid #e4e2e2;padding-top: 5px;padding-bottom: 5px; }
+.teachResource .teachList .teachListOne ul.ulOne li{  background: url("../images/triggle.png") no-repeat 5px center;  line-height:30px;color: #333333;    padding-left: 18px;font-size: 13px;
+}
+.teachResource .teachList .teachListOne ul.ulTwo li{  background: url("../images/triggle1.png") no-repeat 5px center;  line-height:30px;color: #333333;    padding-left: 18px;font-size: 13px;
+}
+.teachResource .teachList .teachListOne ul.ulThree li{  background: url("../images/triggle2.png") no-repeat 5px center;  line-height:30px;color: #333333;    padding-left: 18px;font-size: 13px;
+}
+.teachResource .teachList .teachListOne ul.ulFour li{  background: url("../images/triggle3.png") no-repeat 5px center;  line-height:30px;color: #333333;    padding-left: 18px;font-size: 13px;
+}
+.teachResource .teachList .teachListOne ul.ulOne li a:hover{color:#fd6720; }
+.teachResource .teachList .teachListOne ul.ulTwo li a:hover{color:#f56f73; }
+.teachResource .teachList .teachListOne ul.ulThree li a:hover{color:#3383e4; }
+.teachResource .teachList .teachListOne ul.ulFour li a:hover{color:#00a3c1; }
+.teachResource .teachList .teachListOne ul li span{ font-size: 13px;color: #999999;float: right;padding-right: 5px;}
+/*教学资源*/
+
+.excellent{width: 1000px;margin: 0 auto; overflow: hidden;margin-top: 20px}
+/*优秀老师的空间*/
+.excellent .excelTeacher{ float: left;width: 480px;height: 310px;}
+.excelTeacher .teacher{padding-top:10px; float:left;width:478px; display:none; border: 1px solid #e4e2e2;
+border-radius: 3px;}
+.excelTeacher .teacher ul{ overflow:hidden; }
+.excelTeacher .teacher li{width:68px; height:88px; float:left; margin-left: 23px;  margin-top: 10px;  margin-bottom: 20px; text-align:center;}
+.excelTeacher .teacher li img{ display: block;width: 65px;height: 60px;border-radius: 10px;}
+.excelTeacher .teacher li:hover p{color:#17a06c;}
+.excelTeacher .teacher li a{ display:block;}
+.excelTeacher .teacher li p{ line-height:16px; padding-top:8px; text-align:center; color:#000; font-size: 16px;color: #454444;}
+/*优秀老师的空间*/
+/*优秀学生的空间*/
+.excellent .excelStudent{ float: right;width: 480px;height: 310px;}
+.excelStudent .student{padding-top:10px; float:left;width:478px; display:none; border: 1px solid #e4e2e2;
+    border-radius: 3px;}
+.excelStudent .student ul{ overflow:hidden; }
+.excelStudent .student li{width:68px; height:88px; float:left; margin-left: 23px;  margin-top: 10px;  margin-bottom: 20px; text-align:center;}
+.excelStudent .student li img{ display: block;width: 65px;height: 60px;border-radius: 10px;}
+.excelStudent .student li:hover p{color:#17a06c;}
+.excelStudent .student li a{ display:block;}
+.excelStudent .student li p{ line-height:16px; padding-top:8px; text-align:center; color:#000;font-size: 16px;color: #454444;}
+/*优秀学生的空间*/

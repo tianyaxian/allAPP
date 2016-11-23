@@ -1,0 +1,16 @@
+<% _.each(data.list,function(value,key,list){%>
+<div class='inline-block list_img relative'>
+    <div class='book_cover'>
+        <a href='/book/<%=value.appId%>' target='_blank'>
+            <img src='<%=etdk.g._IMG_%>preloader.gif'
+                 onload='etdk.g.delayImg(this,\"<%=data.http+value.appId+data.cover%>\")'
+            style='height:<%=data.height%>'/>
+        </a>
+    </div>
+    <% if(value.tag == '新书'){%>
+        <div class='new_status absolute'><img src='<%=etdk.g._IMG_%>new.png'/></div>
+    <%}else if(value.tag == '推荐'){%>
+        <div class='new_status absolute'><img src='<%=etdk.g._IMG_%>recommend.png'/></div>
+    <%}%>
+</div>
+<%});%>

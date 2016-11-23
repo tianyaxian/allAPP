@@ -1,0 +1,101 @@
+<div class='bookintro_content inline-block'>
+	<div class='bookintro_cover_intro'>
+		<div class='book_cover inline-block relative'>
+            <% if(etdk.g.br.ie678){ %>
+            <div class='ie_shadow_bg absolute'></div>
+            <div class='corner_leftTop img_corner absolute'>
+            </div>
+            <div class='corner_rightTop img_corner absolute'>
+            </div>
+            <div class='corner_bottomLeft img_corner absolute'>
+            </div>
+            <div class='corner_bottomRight img_corner absolute'>
+            </div>
+            <%}%>
+			<img src='<%=etdk.g._IMG_%>preloader.gif' onload='etdk.g.delayImg(this,\"<%=book.cover%>\")'  class='absolute'>
+		</div>
+		<div class='book_name_intro inline-block'>
+			<div class='book_name_author'><%=book.appName%></div>
+            <div class='status_date_loads'>
+                <img src='<%=etdk.g._IMG_%>load_nums.png' title='下载次数'/>
+                <div class='inline-block'><%=book.units%></div>&nbsp; &nbsp;
+                <img src='<%=etdk.g._IMG_%>publish_date.png' title='发布日期'/>
+                <div class='inline-block'><%=book.availabilityDate%></div>
+
+            </div>
+			<div class='book_download'>
+                <%if(etdk.g.br.windows){%>
+                <a href='<%=etdk.g.windows%>'>
+                <%}%>
+                <%if(etdk.g.br.android){%>
+                    <a href=''>
+                <%}%>
+                <%if(etdk.g.br.mac || etdk.g.br.ios){%>
+                   <a href='<%=etdk.g.appstore%>'>
+                 <%}%>
+					<img src='<%=etdk.g._IMG_%>book_download.png'>
+				</a>
+			</div>
+		</div>
+		<div class='book_cover_shows book_cover_shows<%=book.type%>'>
+			<% for(var i=0;i < 5;i++){ %>
+			    <div class='book_imgs_shows book_imgs_shows<%=book.type%> inline-block relative'>
+					<img rel='<%=book.Padscreenshot[i]%>' num='<%=i%>' class='pointer' src='<%=etdk.g._IMG_%>preloader.gif' onload='etdk.g.delayImg(this,\"<%=book.Padscreenshot[i]%>\")'>
+			    </div>
+			<%}%>
+		</div>
+	</div>
+	<div class='book_synopsis_content book_synopsis_content<%=book.type%>'>
+		<div class='book_synopsis'>
+			<img src='<%=etdk.g._IMG_%>plane.png'>
+            <img src='<%=etdk.g._IMG_%>intro_img.png'>
+		</div>
+		<div class='synopsis_content'>
+            <%=book.description%>
+		</div>
+	</div>
+</div>
+<div class='download_recom_list inline-block'>
+	<div class='download_ranklist'>
+		<div class='ranklist_title'>图书下载排行榜</div>
+		<ul>
+            <% _.each(rank,function(value,key,rank){%>
+					<li class='ranklist_num relative'>
+                      <label class='center_li'>
+						<span class='ranklist_num_img ranklist_num_img<%=key+1%> inline-block'>
+                            <%=key+1%>
+                        </span>
+                        <a href='<%= etdk.g._ROOT_ %>book/<%=value.appId%>'>
+                            <%= value.appName%>
+                        </a>
+                      </label>
+                    </li>
+			<%})%>
+		</ul>
+	</div>
+	<div class='download_recommend'>
+		<div class='download_recommend_title'>推荐下载</div>
+		<ul>
+            <% _.each(reco,function(value,key,rank){%>
+					<li class='download_recommend_book relative'>
+                        <a href='<%= etdk.g._ROOT_ %>book/<%=value.appId%>' target='_blank'>
+                            <img src='<%=etdk.g._IMG_%>preloader.gif' onload='etdk.g.delayImg(this,\"<%=value.cover%>\")'>
+                        </a>
+						<div class='download_recommend_book_intro'><%=value.appName%></div>
+                        <!--div class='down_num_star'>
+                            ↓100 <span style='color:red;'>★</span> 100
+                        </div-->
+						<div class='new_icon absolute'><img src='<%=etdk.g._IMG_%>new_icon.png'></div>
+					</li>
+            <%})%>
+    	</ul>
+	</div>
+</div>
+<div class='imgview_mask absolute'></div>
+<div class='coverImgView absolute'>
+    <img src='' class='cur_img_view'/>
+    <div class='border_bg_imgview absolute'></div>
+    <div class='imgview_btn_left absolute pointer'><img src='<%=etdk.g._IMG_%>imgview_btn_left.png'/></div>
+    <div class='imgview_btn_right absolute pointer'><img src='<%=etdk.g._IMG_%>imgview_btn_right.png'/></div>
+</div>
+

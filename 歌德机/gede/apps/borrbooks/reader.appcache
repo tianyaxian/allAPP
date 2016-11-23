@@ -1,0 +1,31 @@
+CACHE MANIFEST
+# VERSION 2.0
+
+CACHE:
+css/reader.css
+js/jquery.js
+js/ejs.js
+js/index.js
+js/turn.js
+/js/touch.js
+css/jquery.nstSlider.min.css
+js/jquery.nstSlider.min.js
+
+
+images/close.png
+images/icons.png
+images/popBg.png
+images/popBg_1.png
+images/popBg_2.png
+images/popBg_3.png
+images/shadow.png
+images/btnRead.png
+images/bgshadow.png
+
+template/bookinfo.ejs
+template/bookcata.ejs
+
+NETWORK:
+*
+
+FAILBACK:

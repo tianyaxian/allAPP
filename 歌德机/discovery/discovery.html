@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/discovery.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="maskLayer"></div>
+<div class="shadow1"></div>
+<div class="logo"></div>
+<div class="box"><div class="main" id="main"></div>
+</div>
+<div class="shadow"></div>
+<div class="back"></div>
+<!--视频集数弹窗-->
+<div class="videoListPup" id="videoListPup" style="display: none;">
+    	<img class="closePub" id="close1" src="images/close.gif">
+    	<div id="xiLieName"><h2>视频集数列表</h2></div>
+        <div class="list_con">
+        	<ul id="videoList"></ul>
+        </div>
+    </div>	
+<!--视频集数弹窗-->
+<!--新闻弹窗 begin-->
+    <div class="videoPup" id="winPop">
+    	<img src="images/close.gif" class="closePub" id="close2" style="right:0; top:0; z-index:889;" />
+        <div id="name"></div>
+        <div id="videoShow" class="videoShow"><div id="a1"></div></div>
+    </div>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="../ckplayer/ckplayer.js"></script>
+<script src="js/gainXiLie.js"></script>
+<script src="js/gain.js"></script>
+<script>
+$("#main .book").click(function(){
+	gainVideoList($(this).children("input").val());
+	$(".maskLayer").show();		
+	if($(".maskLayer").css('display')=='block'){
+		$(".maskLayer").fadeTo('fast',0.4);
+		$('.maskLayer').height($(document).height());
+	}		
+	return false;			
+});	
+
+$("#close2").click(function(){
+	$(".videoPup").hide();	
+	$("#a1").empty();
+	$("#name").empty();
+	return false;
+});
+
+$("#close1").click(function(){
+	$("#videoListPup").hide();
+	$(".maskLayer").hide();
+	$("#videoList").empty();
+	return false;
+});
+</script>
+</body>
+<script>
+$(document).ready(function(e) {
+    $(".box").height($(window).height()-270+'px');
+});
+</script>
+</html>

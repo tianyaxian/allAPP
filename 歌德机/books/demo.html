@@ -1,0 +1,222 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>超星动画绘本</title>
+    <link href="./Public/css/lib/reset.css" rel="stylesheet">
+    <link href="Public/css/lib/font/header.css" rel="stylesheet">
+    <link href="./Public/css/custom/header_footer.css" rel="stylesheet">
+    <link href="./Public/css/custom/categorynav.css" rel="stylesheet">
+    <!--数据api js-->
+    <script src="./stores/jquery.min.js"></script>
+    <script src="./stores/data.js"></script>
+    <script src="./stores/jquery.pagination.js"></script>
+</head>
+<body>
+
+<div class="head">
+    <div class="nav">
+    </div>
+</div>
+<div id="container">
+    <div id="categorynav" class="categorynav">
+        <div class="book_lists" id="msg" style="display: none"></div>
+
+        <!--分页内容显示区域 star-->
+        <div id="Searchresult">
+
+        </div>
+        <!--分页显示区域 end-->
+        <div class="clear"></div>
+        <div class="pages" id="pages"></div>
+    </div>
+</div>
+
+
+<!--新闻弹窗 begin-->
+<div class="videoPup2" id="popWin" style="display: none">
+    <img src="images/close.gif?gedecache=1" class="closePub" style="right:-46px;" />
+    <div id="videoShowWrap">
+
+    </div>
+</div>
+<!--新闻弹窗end-->
+
+<!--蒙版 start-->
+<div class="maskLayer" style="display: none"></div>
+<!--蒙版 end-->
+
+
+
+<script>
+    $(document).ready(function () {
+        //demo示范数据如何使用，以及如何渲染打开应用，以及关闭事件
+        //获取数据
+        var apiData = _api();
+        //获取当前url
+        var url = window.location.href;
+        //截取当前url路劲
+        var strs = new Array();
+        strs = url.split("/");
+        //当前url路劲
+        var _url = '';
+        for (var i = 0; i < (strs.length - 1); i++) {
+            _url = _url + strs[i] + '/';
+        }
+
+        /*添加分类内容*/
+        function loadContent(dataCla) {
+            var retStr = "";
+            $(".book_lists").empty();
+            var key1 = apiData[dataCla];
+            for (var i=0;i<key1.length;i++) {
+                var appId = key1[i].appId;
+                var app = key1[i].app;
+                var cover = key1[i].cover;
+                var intro = key1[i].intro;
+                var appName = key1[i].appName;
+                var author = key1[i].author;
+                //组成图书URL路劲
+                var app_url = _url + 'stores' + '/' + appId + '/' + app + '/' + 'assets' + '/' + 'www' + '/' + 'index.html';
+                //图书封面URL
+                var cover_url = _url + 'stores' + '/' + appId + '/' + 'cover' + '/' + cover;
+                //首先渲染图书界面 target="_blank"
+                if(i%12==0){
+                    retStr+="<div class='swiper-slide'>"
+                }
+                retStr += '<div class="inline-block list_img relative" id="' + appId + '">';
+                retStr += '<div class="book_cover">';
+                retStr += '<a href="' + app_url + '" >';
+               /* retStr += '<img src="images/book.jpg">';*/
+                retStr += '<img src="'+ cover_url +'">';
+                retStr += '</a>';
+                retStr += '</div>';
+                retStr += '<h4>' + appName + '</h4>';
+                retStr += '<div class="intro" style="font-weight: bold;font-size: 14px">';
+                retStr += '简介：' + intro;
+                retStr += '</div>';
+                retStr += '</div>';
+                if(i%12==11){
+                    retStr+='</div>'
+                }
+            }
+            if (key1.length % 12 != 0){
+                retStr+='</div>';
+            }
+            $(".book_lists").html(retStr);
+        }
+
+        loadContent("中外名著");
+
+
+        /*添加导航*/
+        var ulstr = "";
+        ulstr += "<ul>";
+        for (var key in apiData) {
+            ulstr += '<li idx="' + key + '">' + key + '</li>';
+        }
+        ulstr += "</ul>";
+        $(".nav").html(ulstr);
+
+        /*点击分类切换内容*/
+        $(".nav li").eq(0).addClass("selected");
+        $(".nav li").click(function () {
+            console.log($(this).attr("idx"));
+            $(this).addClass("selected").siblings().removeClass("selected");
+            $(".book_lists").empty();
+            var idx = $(this).attr("idx");
+            loadContent(idx);
+            ellipse();
+            /*video();*/
+            pages();
+        });
+
+        /*超出部分的文字显示 ...*/
+        function ellipse() {
+            var txt = 45;
+            $(".intro").each(function (i) {
+                var o = $(".intro").eq(i);
+                var s = o.html();
+                var aa = s.length > txt ? "..." : "";
+                var p = $('<span> ' + s.substring(0, txt) + '</span>');
+                var n = $("<font>" + aa + "</font>");
+                o.html(p);
+                o.append(n);
+            });
+        }
+
+        ellipse();
+
+        /*页码*/
+        function pages(){
+            var initPagination = function() {
+                var num_entries = $("#msg div.swiper-slide").length;
+                console.log("aa");
+                // 创建分页
+                $("#pages").pagination(num_entries, {
+                    num_edge_entries: 1, //边缘页数
+                    num_display_entries: 4, //主体页数
+                    callback: pageselectCallback,
+                    items_per_page:1 //每页显示1项
+                });
+            }();
+            function pageselectCallback(page_index, jq){
+                var new_content = $("#msg div.swiper-slide:eq("+page_index+")").clone();
+                $("#Searchresult").empty().append(new_content); //装载对应分页的内容 page_index
+                video();
+                return false;
+            }
+        }
+        pages();
+
+
+        /*弹窗内容*/
+        function makehtml(href,title){
+            var swfstr="";
+            var swfstr2="";
+            swfstr+='<h3>'+title+'</h3><div class="videoShow2" id="videoShow"><div class="loading"></div>' +
+                    ' <iframe  name="iframe" frameborder="0" src="'+href+'"></iframe>'+
+                    '</div>'
+            ;
+            $("#videoShowWrap").append(swfstr);
+        }
+        /*弹窗*/
+        function video(){
+            $("#categorynav .list_img").click(function () {
+                $("#videoShowWrap").empty();//清空videoShowWrap中的内容
+                var href=$(this).children(".book_cover").children("a").attr("href");
+                var tittle = $(this).children("h4").text();
+                console.log(href,tittle);
+                makehtml(href, tittle);
+
+                $(".maskLayer").show();
+                if ($(".maskLayer").css('display') == 'block') {
+                    $(".maskLayer").fadeTo('fast', 0.8);
+                    $('.maskLayer').height($(document).height());
+                }
+                $(".videoPup2").show();
+                return false;
+            });
+        }
+        video();
+        /*关闭窗口*/
+        $(".maskLayer,.closePub").click(function () {
+            $(".videoPup2").hide();
+            $(".maskLayer").hide();
+            $("#a1").empty();
+            $("#videoShow").children('iframe').attr("src", "about:blank");
+            return false;
+        });
+        $(window).scroll(function () {
+            $('.videoPup').css({
+                top: function () {
+                    return ($(window).height() - $(this).height()) / 2 + $(window).scrollTop();
+                }, left: function () {
+                    return ($(window).width() - $(this).width()) / 2;
+                }
+            });
+        });
+    });
+    //http://www.weste.net/2014/4-4/96193.html 全屏
+</script>
+</body>
+</html>

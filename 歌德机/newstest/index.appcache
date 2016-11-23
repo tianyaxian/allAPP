@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# VERSION 1.0
+
+CACHE:
+index.shtml
+css/style.css
+js/jquery.js
+/js/touch.js
+js/snap.svg-min.js
+js/index.js
+
+NETWORK:
+*
+
+FAILBACK:

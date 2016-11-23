@@ -1,0 +1,13 @@
+<div class="Rsite fl">
+    <%if(summary){%>
+        <div class="tit png_box">简介</div>
+        <div class="shortInfo"><%=summary%></div>
+    <%}%>
+    <div class="clearfix"><div class="onlineRead"></div></div>
+    <%if(catalog.length > 0){%>
+    <div class="tit png_box">目录</div>
+    <div class="list catalist" ontouchstart="">
+        <li></li>
+    </div>
+    <%}%>
+</div>

@@ -1,0 +1,111 @@
+@charset "utf-8";
+body{font:24px/1.5 微软雅黑;color:#333;background:#b3e3ee;overflow: hidden;user-select: none;}
+.fl{float:left}
+.fr{float:right}
+@font-face{font-family:'DroidSans251988';src:url('/template/0/font/DFPSHAONVW5-GB-webfont.eot?gedecache=1');src:url('/template/0/font/DFPSHAONVW5-GB-webfont.eot?#iefix&gedecache=1') format('embedded-opentype'),url('/template/0/font/DFPSHAONVW5-GB-webfont.woff2?gedecache=1') format('woff2'),url('/template/0/font/DFPSHAONVW5-GB-webfont.woff?gedecache=1') format('woff');font-weight:normal;font-style:normal}
+.newsMain{padding:55px 80px 0}
+.header{height:66px;background:url(../images/line.gif) 0 42px repeat-x}
+.animal1{width:57px;height:65px;background:url(../images/animal1.jpg) no-repeat}
+.header span{font-size:24px;color:#1e75a5;padding:0 10px;background:#b3e3ee;margin-top:25px}
+.header h2{font:50px/1.5 DroidSans251988; line-height:54px;padding:0 25px 0 76px}
+.Colle_con{width:1575px;position:fixed;bottom:70px;left:125px;padding:0 30px 0 0;z-index:800;}
+.bookcontainer .swiper-slide{width: 1920px!important;}
+.wrapSwiper{float: left;  width: 1340px;overflow: hidden }
+.initial{width:100px;float:right;height:60px;border-radius: 12px;border: 2px solid #1a73a4;background: #ffffff;
+    text-align: center;line-height: 60px;color: #666;font-family:'DroidSans251988'; }
+.Colle_con .animal{width:100px;float:left;margin-right:30px;}
+.animal .xiaLa1{width:100px;height:60px;border-radius: 12px;float:left;border: 2px solid #1a73a4;background: lightpink; font:30px/60px 'DroidSans251988';text-align: center;}
+.animal .xiaLa{height: 60px;display: block}
+.animal .jiahao{background:white url("../images/jiahao.png") no-repeat 3px center;padding-left: 22px;}
+.animal .jianhao{background:white url("../images/jianhao.png") no-repeat 3px center;padding-left: 22px;}
+.animal #xiaLa{background: white;position: absolute;width: 119px;
+    height: 150px;border: 2px solid #1a73a4;border-radius: 12px;bottom: 70px;}
+.animal #xiaLa div{height: 50px;font:30px/50px 'DroidSans251988'; text-align: center;color: #666666;cursor: pointer}
+
+.load,.tips {position: absolute;left: 50%;top: 50%; margin-top: -90px; margin-left: -90px;z-index: 1000;}
+.tips {margin-top: -60px;color:red;}
+.Colle_con li{float:left}
+.Colle_con li a{float:left;height:60px;margin:0 20px;color:#666;text-align:center;font:30px/60px 'DroidSans251988'}
+.Colle_con li.cur a{color:#75c935}
+.Colle_con .prev{background-position:0 -44px}
+.Colle_con .unprev{background-position:0 0}
+.Colle_con .next{background-position:-27px -44px}
+.Colle_con .unnext{background-position:-27px 0}
+.Colle_con .wrapSwiper{width: 1330px;overflow:hidden;height:60px;background:#fff;border-radius:12px;border:2px solid #1a73a4;}
+.wrapSwiper .swiperCon{width: 1300px;margin-left: 10px;overflow: hidden;}
+
+.Colle_con .conveyer{position:absolute;left:0;top:0}
+.maskLayer{width:100%;height:100%;filter:alpha(opacity=40);opacity:.5;background:#000;position:absolute;z-index:88;top:0;left:0;display:none}
+.closePub{position:absolute;right:30px;top:-20px; z-index: 999}
+.bookMain{padding:55px 80px 0}
+.bookMain .header h2{color:#2ea2ef;background:url(../images/icons8.png) 0 center no-repeat #b3e3ee}
+.bookBox{width:1920px;margin:150px 0 0;height:810px;position:absolute;left:0}
+.bookshelf{height:300px;background:url(../images/bookshelf.png)  left bottom no-repeat;padding:0 134px 80px;margin-bottom:27px}
+.bookshelf li{width:234px;height:288px;float:left;text-align:center;position:relative; overflow: hidden; background:url(../images/book_li_bg.png) center bottom no-repeat;}
+.bookshelf li a{width:234px;height:288px;position:relative;float:left;text-align:center}
+.bookshelf li .erwei{position:absolute;width:75px;height:75px;z-index:9;right:18px;bottom:14px;border: 1px double #fff;}
+.bookshelf li .news{width:33px;height:83px;position:absolute;z-index:9;right:5px;top:-6px}
+.bookshelf li .loading{position:absolute;width:40px;height:40px;z-index:9;left:95px;top:130px}
+.bookshelf li .img{transition:opacity .3s;opacity:0}
+/*
+.bookshelf li .content {  margin: 0 auto;  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition: opacity 0.3s ease 0.5s, width 0.4s ease 0.1s, height 0.4s ease 0.1s, top 0.4s ease 0.1s, left 0.4s ease 0.1s, margin 0.4s ease 0.1s;  background: none repeat scroll 0 0 #fff;
+    overflow: hidden;  opacity: 0;  position: fixed;  }
+*/
+/*
+.bookshelf li .content.open {  height: 100%;  left: 0 !important;  top: 0 !important;  width:  100%;  }
+*/
+.bookshelf li .hotimg, .bookshelf li .newimg {   position: absolute;  top:0px;  right: 16px;  width: 55px;  height: 55px;  }
+.bookshelf li.hotbook .hotimg, .bookshelf li.newbook .newimg {  display:block;  }
+.bookPup {  width: 1580px;  height: 940px;  z-index: 888;  position: fixed;  top: -2000px;  opacity: 0;  }
+
+.pagination{position:fixed;z-index:20;right:80px;bottom:52px;text-align:right;width:100%}
+#pageinfo{position: fixed; bottom:0px; right: 50px; width:100px; height:100px;font-size: 28px;}
+.swiper-pagination-switch{display:inline-block;width:12px;height:12px;border-radius:50%;background:#999;margin:0 8px;opacity:.8;cursor:pointer}
+.swiper-visible-switch{background:#aaa}
+.swiper-active-switch{background:#0e6fe7}
+.swiper-container{width:100%;height:100%;}
+.device{width:100%;height:100%;position:absolute;top:0;left:0}
+.popshadow{ background:#000; opacity: .6; width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; z-index: 887; display: none }
+#wrapper li{cursor:pointer}
+
+.swiper-slide {  font-size: 18px;  height: auto;  -webkit-box-sizing: border-box;  box-sizing: border-box;  }
+.swiper-container .swiper-slide ul.conveyer{height: 56px;line-height: 56px;overflow: hidden;}
+.swiper-container .swiper-slide ul.conveyer li{float: left;cursor: pointer; font-family:"DroidSans251988";}
+.swiper-container .swiper-slide ul.conveyer li a{float:left;height:56px;color:#666;text-align:center; font:30px/56px 'DroidSans251988'}
+.swiper-container .swiper-slide ul.conveyer li.cur a{color:#75c935}
+
+
+.closePub{position:absolute;right:30px;top:-20px; z-index: 999}
+.bookPup {  width: 1580px;  height: 940px;  z-index: 888;  position: fixed;  top: -2000px;  opacity: 0;  }
+.bookPup.open {  top: 50%;  left: 50%;  z-index: 2000;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+}
+.popshadow{ background:#000; opacity: .6; width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; z-index: 887; display: none }
+.swiper-pagination-fraction {  bottom: -33px;  right: 70px;  width: 9%;  }
+
+@media screen and (max-width: 1081px){
+    .bookshelf {  width: 1081px;  background: url(../images/bookshelf.png) center bottom no-repeat;    margin-top: 50px;  padding: 0 0 36px;  background-size: contain;  }
+    .bookshelf ul{margin-left: 72px;}
+    .Colle_con {  width: 961px;  left: 55px;    bottom: 73px;  padding: 0 30px 0 0;}
+    #pageinfo{ bottom:116px;}
+    .bookBox{width:1080px;margin:150px 0 0;height:1571px;position:absolute;left:0}
+    .bookcontainer .swiper-slide{width: 1080px!important;}
+
+    .Colle_con .wrapSwiper {  width: 710px;  height: 56px;  background: #fff;  border-radius: 12px;
+        border: 2px solid #1a73a4;  }
+    .wrapSwiper .swiperCon {  width: 690px;  margin-left: 10px;  }
+    .wrapSwiper{  width: 715px;  height: 56px;  line-height: 56px;  overflow: hidden;
+        left: 48px;  background:#fff;  border:2px solid #1a73a4;  border-radius:12px;  -moz-border-radius:12px;  }
+    .swiper-container {  width: 1080px; margin: 0;overflow: hidden;  }
+    .swiper-slide { font-size: 18px;  height: auto;  -webkit-box-sizing: border-box;  box-sizing: border-box;  }
+    .swiper-container .swiper-slide ul.conveyer{height: 56px;line-height: 56px;overflow: hidden;}
+    .swiper-container .swiper-slide ul.conveyer li{float: left;cursor: pointer}
+    .swiper-container .swiper-slide ul.conveyer li a{float:left;height:56px;color:#666;text-align:center;font:30px/56px 'DroidSans251988'}
+    .bookPup {  width: 1033px;  height: 723px;  z-index: 888;  position: fixed;  top: -2000px;  opacity: 0;  }
+    .closePub {  position: absolute;  right: 25px;  top: -20px;  z-index: 999;}
+}

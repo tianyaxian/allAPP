@@ -1,0 +1,30 @@
+<div class='r_left_b curtain inline-block'></div>
+<div class='r_b_c inline-block'>
+    <div class='avatars relative'>
+         <% for(var i=0;i<data.length;i++){%>
+        <div cid='<%=data[i][2]%>' class='<%=data[i][0]%>_area avatars_bg inline-block pointer <% if(i==0){%>select_state<%}%>'>
+            <img src='<%=etdk.g._IMG_+data[i][0]%>_area.png' title='<%=data[i][1]%>区'/>
+        </div>
+        <%}%>
+    </div>
+    <div class='r_books_bg relative'>
+        <%if(etdk.g.br.ie678){%>
+        <div class='r_booksie_bg_top absolute'></div>
+        <%}%>
+        <div class='r_books'></div>
+        <%if(etdk.g.br.ie678){%>
+            <div class='r_booksie_bg_bottom absolute'></div>
+        <%}%>
+        <div class='load_more'>
+            <div class='load_more_dashed pointer'>加载更多</div>
+        </div>
+    </div>
+</div>
+<div class='r_ringht_b curtain inline-block'></div>
+<div class='giraffe absolute'><img src='<%=etdk.g._IMG_%>giraffe.png'/></div>
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml"  manifest="index.appcache">
+<head>
+    <link href="css/all.css" type="text/css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="/template/0/touch.js"></script>
+	<!--<base href="http://book.jieyueji.cn" />-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="http://book.jieyueji.cn/template/main/js/sea.js" ></script>
+</head>
+<body style="background-color:#248dc1">
+<div class="bodyBg">
+    <img src="images/bg.jpg">
+</div>
+<div class="loading logo"></div>
+<div class="loading">
+    <svg id="logo" viewBox="0 0 100 80" enable-background="new 0 0 100 80" style="animation:pulse 2s infinite;" xml:space="preserve" height="80px" width="100px" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<path d="M91,19.704c-14.19-0.666-27.295-0.666-40.396-0.666
+	c-8.885,0-15.534-0.517-19.559,4.485c-1.041,1.293-2.089,2.619-2.554,4.485c-0.284,1.142-0.125,2.771-0.125,4.111
+	c0,2.803,0,5.607,0,8.41c0,3.725-0.308,8.01,0.748,10.715c3.796,9.723,13.728,8.158,26.785,8.16c6.205,0,12.658,0.664,14.515-3.676
+	c1.129-2.639-0.171-5.402-1.807-6.479c-1.938-1.277-5.041-1.121-8.347-1.121c-5.356,0-10.715,0-16.071,0c0-5.959,0-11.919,0-17.878
+	c7.516,0,15.033,0,22.55,0c8.64,1.585,15.015,4.105,19.311,9.968c2.334,3.184,4.906,9.273,3.862,15.51
+	c-0.421,2.514-0.684,4.828-1.495,6.914c-2.642,6.787-7.346,11.643-14.515,13.893c-4.798,1.504-12.221,0.871-18.313,0.871
+	c-5.253,0-10.508,0-15.76,0c-3.141,0-6.609,0.209-9.157-0.436c-5.297-1.34-9.597-3.922-13.331-6.852
+	c-3.328-2.613-6.443-6.279-7.724-10.902c-0.67-2.418-0.374-5.939-0.374-8.908c0-5.543,0-11.088,0-16.631c0-3.093,0-6.188,0-9.281
+	c0.042-1.578,0.083-3.157,0.125-4.734c0.468-2.234,1.314-4.175,2.367-5.856C15.47,7.838,21.432,3.097,29.425,1.41
+	c3.521-0.743,8.72-0.249,12.707-0.249c3.8,0,7.601,0,11.4,0C63.648,6.112,67.731,8.341,91,19.704z" fill="#E60012"/></svg>
+</div>
+<div class="loading text"><p id="message">正在加载所需资源,请稍候...</p></div>
+<a onclick="fw.close()" accesskey="q"/>
+<script>
+    seajs.config({
+        base: "http://localhost:63342/template/0/"
+    });
+	 window.loadover = function(){
+        $(".loading").remove();
+    };
+    seajs.use(["template"]);
+   //$(document).bind("keydown", "esc", function (ev) { fw.close();});
+
+</script>
+</body>
+</html>

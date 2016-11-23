@@ -1,0 +1,58 @@
+<div class='chapter_list inline-block'>
+    <% if(article){%>
+        <div class='article_content'>
+            <h3><%=chapter.title%></h3>
+            <h4>
+                <i class='icon-pencil'><%=chapter.author%></i>
+                <i class='icon-price-tags'></i>
+                <i class='icon-clock'></i>
+                <%=new Date(chapter.create_time * 1000).toLocaleString().replace(/,|AM/g,'')%>
+            </h4>
+            <div class='chapter_desc'>
+                <%=chapter.content%>
+            </div>
+        </div>
+    <%}else{%>
+        <ul>
+        </ul>
+    <%}%>
+
+</div>
+<div class='chapter_rank inline-block'>
+    <div class='new_chapter'>
+        <div class='new_c_title'>最新文章</div>
+        <ul>
+            <% _.each(news,function(value,key,newlist){%>
+            <li>
+                <span class='ranklist_num_img ranklist_num_img<%=key+1%> inline-block'>
+                    <%=key+1%>
+                </span>
+                <a href='/chapter/<%=value.id%>' target='_blank'>
+                    <i class='inline-block'><%=value.title%></i>
+                </a>
+                <span class='inline-block'>...</span>
+            </li>
+            <%})%>
+        </ul>
+    </div>
+    <div class='download_recommend'>
+        <div class='download_recommend_title'>推荐下载</div>
+        <ul>
+            <% _.each(reco,function(value,key,rank){%>
+            <li class='download_recommend_book relative'>
+                <a href='<%= etdk.g._ROOT_ %>book/<%=value.appId%>' target='_blank'>
+                    <img src='<%=etdk.g._IMG_%>preloader.gif' onload='etdk.g.delayImg(this,\"<%=value.cover%>\")'>
+                </a>
+                <div class='download_recommend_book_intro'><%=value.appName%></div>
+                <!--div class='down_num_star'>
+                    ↓100 <span style='color:red;'>★</span> 100
+                </div-->
+                <div class='new_icon absolute'><img src='<%=etdk.g._IMG_%>new_icon.png'></div>
+            </li>
+            <%})%>
+        </ul>
+    </div>
+</div>
+<div class='post_pages'>
+    <div class='pagination'></div>
+</div>

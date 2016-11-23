@@ -1,0 +1,34 @@
+<div class='userContainer'>
+	<div class='userinfo_bg relative'>   
+		<div class='user_icon absolute pointer'><img src='<%=_IMG_%>avatar01.png'/></div>
+		<div class='ie7_placeholder'></div>
+		<div class='user_info_body relative'>
+			<div class='placeholder'></div>
+			<div class='user_vip_level'><img src='<%=_IMG_%>vip.png'/><%=levels%></div>
+			<div class='user_info_message'>
+				<div class='input_name input_common'>姓名 : <input type='text' value='<%=nickname%>'/></div>
+				<div class='input_birthdate input_common'>生日 : <input type='text' value='<%=birthday%>'/></div>
+				<div class='input_sex input_common'>性别 : 
+                 <input type='radio' name='sex' <% if(sex=='男'){%>checked='true'<%}%> value='男'/>
+                 <img class='img_boy' src='<%=_IMG_%>boy.png'>
+                 <input type='radio' name='sex' <% if(sex=='女'){%>checked='true'<%}%> value='女'/>
+                 <img class='img_girl' src='<%=_IMG_%>girl.png'>
+				</div>
+				<div class='input_city input_common'>城市 : <input type='text' value='<%=city%>'/></div>
+				<div class='input_school input_common'>学校 : <input type='text'value='<%=school%>'/></div>
+			</div>
+			<div class='user_books_info'>
+				<div class='user_store_books'><strong>存书 : </strong><%=bookNum%>本</div>
+				<div class='user_knows'><strong>知识水晶 : </strong><%=balance%>颗</div>	
+			</div>
+			<div class='user_btn'>
+				<img class='user_btn_save user_btn_common pointer' src='<%=_IMG_%>user_btn_save.png'/>
+				<img class='user_btn_loginout user_btn_common pointer' src='<%=_IMG_%>user_btn_loginout.png'/>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+

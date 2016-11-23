@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>尔雅选修课横屏</title>
+    <link href="css/global.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="http://mc.m.5read.com/CXJSBridge.js"></script>
+    <script type="text/javascript">
+        /**  退出webapp，回到Native应用的首页  */
+        function processQuit() {
+            jsBridge.postNotification('CLIENT_EXIT_WEBAPP', {message: ''});
+        }
+        ;
+        if (screen.width <= '1081')
+            window.location = "index_s.html";
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <p><img src="images/logo.png"></p>
+        <div class="code"><img src="images/erweima.png"></div>
+    </div>
+
+    <div class="tab">
+        <div class="tab_box" id="tab_box">
+            <div class="wrapT" style="display: block; ">
+                <div class="swiper-main">
+                    <div class="swiper-container swiper1" style="display: block">
+                        <div class="swiper-wrapper" id="hightSch">
+                        </div>
+                        <div class="swiper-pagination pagination1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="maskLayer" style="background:rgba(0, 0, 0, 0.8);opacity: 0.8;height: 100%;width: 100%;"></div>
+<div class="wrapCon">
+    <div class="wrapCode">
+        <div class="erwei">
+            <canvas width="200" height="200"></canvas>
+        </div>
+        <p>手机扫码带走课程</p>
+    </div>
+    <img class="closePub" id="close1" src="images/closeBtn.png">
+
+    <div class="contentOne">
+    </div>
+
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/hightSchData.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/grate.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".source a").click(function () {
+            gainVideoList($(this).children("input").val());
+            $(".maskLayer").show();
+            $(".wrapCon").show();
+            if ($(".maskLayer").css('display') == 'block') {
+                $(".maskLayer").fadeTo('fast', 0.8);
+            }
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

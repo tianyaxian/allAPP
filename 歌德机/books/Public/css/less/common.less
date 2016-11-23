@@ -1,0 +1,12 @@
+@baseUrl: '/Public/imgs/';
+.filter(@png){
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{baseUrl}@{png}', sizingMethod='scale');
+}
+.w_h(@width,@height){
+  width:@width;
+  height:@height;
+}
+.noie78bg(@imgFile){
+	background-image:url('@{baseUrl}@{imgFile}.png');
+    background-size:100% 100%;
+}

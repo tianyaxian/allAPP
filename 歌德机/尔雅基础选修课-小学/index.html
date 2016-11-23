@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>尔雅选修课横屏</title>
+    <link href="css/global.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="http://mc.m.5read.com/CXJSBridge.js"></script>
+    <script type="text/javascript">
+        function processQuit()
+        {
+            jsBridge.postNotification('CLIENT_EXIT_WEBAPP',{message:''});
+        };
+        if (screen.width <= '1081')
+            window.location = "index_s.html";
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <p><img src="images/logo.png"></p>
+        <div class="tab_menu">
+            <ul>
+                <li class="liList_1 selected">一年级</li>
+                <li class="liList_2 ">二年级</li>
+                <li class="liList_3 ">三年级</li>
+                <li class="liList_4 ">四年级</li>
+                <li class="liList_5 ">五年级</li>
+                <li class="liList_6 ">六年级</li>
+            </ul>
+        </div>
+        <div class="code"><img src="images/erweima.png"></div>
+    </div>
+
+    <div class="tab">
+        <div class="tab_box" id="tab_box">
+            <div class="wrapT" style="display: block; ">
+                <div class="swiper-main">
+                    <div class="swiper-container swiper1" style="display: block">
+                        <div class="swiper-wrapper" id="yi">
+                        </div>
+                        <div class="swiper-pagination pagination1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapT" style="display: none;">
+                <div class="swiper-main">
+                    <div class="swiper-container swiper2">
+                        <div class="swiper-wrapper" id="er">
+                        </div>
+                        <div class="swiper-pagination pagination2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapT" style="display: none;">
+                <div class="swiper-main">
+                    <div class="swiper-container swiper3">
+                        <div class="swiper-wrapper" id="san">
+
+                        </div>
+                        <div class="swiper-pagination pagination3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapT" style="display: none;">
+                <div class="swiper-main">
+                    <div class="swiper-container swiper4">
+                        <div class="swiper-wrapper" id="si">
+
+                        </div>
+                        <div class="swiper-pagination pagination4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapT" style="display: none;">
+                <div class="swiper-main">
+                    <div class="swiper-container swiper5">
+                        <div class="swiper-wrapper" id="wu">
+                        </div>
+                        <div class="swiper-pagination pagination5"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapT" style="display: none;">
+                <div class="swiper-main">
+                    <div class="swiper-container swiper6">
+                        <div class="swiper-wrapper" id="liu">
+                        </div>
+                        <div class="swiper-pagination pagination6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="maskLayer" style="background:rgba(0, 0, 0, 0.8);opacity: 0.8;height: 100%;width: 100%;"></div>
+<div class="wrapCon">
+    <div class="wrapCode">
+        <div class="erwei"></div>
+        <p>手机扫码带走课程</p>
+    </div>
+    <img class="closePub" id="close1" src="images/closeBtn.png">
+    <div class="contentOne">
+        <iframe src="" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/gradeData.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/grate.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".source a").click(function () {
+            gainVideoList($(this).children("input").val());
+            $(".maskLayer").show();
+            $(".wrapCon").show();
+            if ($(".maskLayer").css('display') == 'block') {
+                $(".maskLayer").fadeTo('fast', 0.8);
+            }
+            return false;
+        });
+        $("#close1").click(function () {
+            console.log("aa");
+            $("#a1").empty();
+            $(".wrapCon").hide();
+            $(".maskLayer").hide();
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

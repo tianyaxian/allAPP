@@ -1,0 +1,28 @@
+<% _.each(data.list,function(value,key,list){%>
+<div class='inline-block list_img relative'>
+    <% if(etdk.g.br.ie678){ %>
+    <div class='ie_shadow_bg absolute'></div>
+    <%}%>
+    <div class='book_cover_word_container relative' style='height:<%=data.height%>'>
+        <a href='<%=etdk.g._ROOT_%>/book/<%=value.appId%>' target='_blank'>
+            <img src='<%=etdk.g._IMG_%>preloader.gif'
+                 onload='etdk.g.delayImg(this,\"<%=data.http+value.appId+data.cover%>\")' style='height:<%=data.height%>' />
+        </a>
+        <!--div class='books_word_intro'>
+            <span class='title_left'>《<%=value.appName%>》</span>
+            <span></span>
+            <span class='title_right'>>详情</span>
+        </div-->
+    </div>
+    <% if(etdk.g.br.ie678){ %>
+    <div class='corner_leftTop img_corner absolute'>
+    </div>
+    <div class='corner_rightTop img_corner absolute'>
+    </div>
+    <div class='corner_bottomLeft img_corner absolute'>
+    </div>
+    <div class='corner_bottomRight img_corner absolute'>
+    </div>
+    <%}%>
+</div>
+<%});%>

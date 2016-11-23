@@ -1,0 +1,218 @@
+<div class='home_bg absolute'>
+    <div class='img_loop_bg'></div>
+    <div class='wave_bg_orange'></div>
+    <div class='books_bg_bg'></div>
+</div>
+<div class='loopword_left inline-block'>
+    <img src='<%=etdk.g._IMG_ %>img-slide-left.png'/>
+    <div class='loopImgBtn relative pointer'>
+    </div>
+</div>
+<div class='imgsloop relative inline-block'>
+    <div class='imgs_loop relative' rel='0'>
+        <% _.each(imgs,function(value,key){%>
+        <a href='<%=value.link_url %>' target='_blank'>
+            <img class='current_loop_img imgs_loop<%=key%> absolute' rel='<%=key%>'
+                 src='http://<%=value.attach_file%>' title='<%=value.title%>'/>
+        </a>
+        <div class='loopImgBtn<%=key%> loopImgBtn absolute pointer'>
+        </div>
+        <%}) %>
+    </div>
+    <div class='imgToLeft absolute pointer' style='display:none;'><img src='<%=etdk.g._IMG_ %>img_to_left.png'></div>
+    <div class='imgToRight absolute pointer'><img src='<%=etdk.g._IMG_ %>img_to_right.png'></div>
+    <div class='imgloop_state absolute'>
+        <% for(var i=0;i<loopNum;i++){%>
+        <div class='imgstate imgstate<%=i%> <%if(i==0){%>imgstateColor<%}%> inline-block'></div>
+        <%}%>
+    </div>
+    <div class='fly_bird absolute'><img src='<%=etdk.g._IMG_ %>fly_bird.gif' /></div>
+</div>
+<div class='wave_bg_orange'><img src='<%=etdk.g._IMG_ %>up_scroll.png'/></div>
+<div class='books_bg relative'>
+    <div id='library_books' class='libraryBooks'>
+        <div class='books_category'>
+            <% for(var i=0;i<data.length;i++){%>
+            <div class=' avatars_bg inline-block pointer'>
+                <a href='<%=data[i][3]%>'>
+                    <img src='<%=etdk.g._IMG_+data[i][0]%>.jpg' />
+                </a>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+<div class='duku_world_intro_bg absolute'>
+    <div class='whatduku_title'>
+        <img src='<%=etdk.g._IMG_%>whatduku_title.png' />
+        <div class='whatduku_world_desc'>
+            读酷儿童图书馆,是专门针对0-12岁儿童研发的教育软件产品,是在国内外众多儿童教育专家的共同努力下,经由北京应用时代教育咨询有限公司应用航母平台研发而成,旨在通过科学的互动游戏、经典有趣的读物,精选的百科知识等激发孩子的想象力,创造力,开发孩子的全面认知能力及左右脑思维分析能力,对孩子的生活和教育产生积极的影响。
+        </div>
+    </div>
+    <div class='what_give_child_title'>
+        <img src='<%=etdk.g._IMG_%>what_give_child_title.png' />
+        <div class='what_give_child_desc'>
+            <div class='what_child_world1 inline-block what_child_world'>
+                <h3>最快乐的学习时间</h3>
+                <span>寓教于乐,让孩子告别枯燥说教</span>
+                <img src='<%=etdk.g._IMG_%>child_world1.png' class='child_world_up'/>
+            </div>
+            <div class='what_child_world2 inline-block what_child_world'>
+                <h3>最科学的智力开发</h3>
+                <span>手脑结合,创新的互动阅读模式.</span>
+                <img src='<%=etdk.g._IMG_%>child_world2.png' class='child_world_up'/>
+                <img src='<%=etdk.g._IMG_%>child_world7.png' class='child_world_down'/>
+
+            </div>
+            <div class='what_child_world3 inline-block what_child_world'>
+                <h3>最轻松的能力培养</h3>
+                <span>发展潜能,顺应孩子的天性.</span>
+                <img src='<%=etdk.g._IMG_%>child_world4.png' class='child_world_up'/>
+                <img src='<%=etdk.g._IMG_%>child_world5.png' class='child_world_down'/>
+
+            </div>
+            <div class='what_child_world4 inline-block what_child_world'>
+                <h3>最开阔的成长视野</h3>
+                <span>拓展知识,随时随地享受海量图书。</span>
+                <img src='<%=etdk.g._IMG_%>child_world6.png' class='child_world_down'/>
+
+            </div>
+            <div class='what_child_world5 inline-block what_child_world'>
+                <h3>最放心的童年伙伴</h3>
+                <span>权威助阵,为孩子量身打造专属读物</span>
+                <img src='<%=etdk.g._IMG_%>child_world3.png' class='child_world_up'/>
+                <img src='<%=etdk.g._IMG_%>child_world8.png' class='child_world_down'/>
+
+            </div>
+        </div>
+    </div>
+    <div class='news_info'>
+        <div class='today_is_news inline-block' style=' visibility: hidden;'>
+            <div style='text-align:left;'><img src='<%=etdk.g._IMG_ %>today_is_news_img.png' /></div>
+            <ul class='topline_vessel'>
+                <% _.each(topline,function(value,key,list){%>
+                <li>
+                    <div class='t_v_img inline-block'><img src='<%=value.cover_image%>' /></div>
+                    <div class='t_v_chapter inline-block'>
+                        <a href='/chapter/<%=value.id%>'>
+                            <h3 class='t_v_title'><%=value.title%></h3>
+                            <div class='t_v_summary'><%=value.intro%></div>
+                            <span>...</span>
+                        </a>
+                    </div>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+        <div class='latest_news inline-block' style=' visibility: hidden;'>
+            <div style='text-align:center;'><img src='<%=etdk.g._IMG_ %>latest_news_img.png' /></div>
+            <div class='l_n_t_vessel'>
+                <h3 class='l_n_t_title'>
+                    <a href='/chapter/<%=latest[0].id%>'>
+                        <%=latest[0].title%>
+                    </a>
+                </h3>
+                <div class='l_n_t_summary'><%=latest[0].intro%></div>
+            </div>
+            <ul class='l_n_info'>
+                <% _.each(latest,function(value,key,list){%>
+                <li>
+                    <span class='zixun_world'>资讯</span>
+                    <div class='l_n_li_title inline-block'>
+                        <a href='/chapter/<%=value.id%>'><%=value.title%></a>
+                    </div>
+                    <span>...</span>
+                </li>
+                <%})%>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+<div class='duku_world_intro'>
+    <div class='whatduku_title'>
+        <img src='<%=etdk.g._IMG_%>whatduku_title.png' />
+        <div class='whatduku_world_desc'>
+            读酷儿童图书馆,是专门针对0-12岁儿童研发的教育软件产品,是在国内外众多儿童教育专家的共同努力下,经由北京应用时代教育咨询有限公司应用航母平台研发而成,旨在通过科学的互动游戏、经典有趣的读物,精选的百科知识等激发孩子的想象力,创造力,开发孩子的全面认知能力及左右脑思维分析能力,对孩子的生活和教育产生积极的影响。
+        </div>
+    </div>
+    <div class='what_give_child_title'>
+        <img src='<%=etdk.g._IMG_%>what_give_child_title.png' />
+        <div class='what_give_child_desc'>
+            <div class='what_child_world1 inline-block what_child_world'>
+                <h3>最快乐的学习时间</h3>
+                <span>寓教于乐,让孩子告别枯燥说教。</span>
+                <img src='<%=etdk.g._IMG_%>child_world1.png' class='child_world_up'/>
+            </div>
+            <div class='what_child_world2 inline-block what_child_world'>
+                <h3>最科学的智力开发</h3>
+                <span>手脑结合,创新的互动阅读模式。</span>
+                <img src='<%=etdk.g._IMG_%>child_world2.png' class='child_world_up'/>
+                <img src='<%=etdk.g._IMG_%>child_world7.png' class='child_world_down'/>
+
+            </div>
+            <div class='what_child_world3 inline-block what_child_world'>
+                <h3>最轻松的能力培养</h3>
+                <span>发展潜能,顺应孩子的天性。</span>
+                <img src='<%=etdk.g._IMG_%>child_world4.png' class='child_world_up'/>
+                <img src='<%=etdk.g._IMG_%>child_world5.png' class='child_world_down'/>
+
+            </div>
+            <div class='what_child_world4 inline-block what_child_world'>
+                <h3>最开阔的成长视野</h3>
+                <span>拓展知识,随时随地享受海量图书。</span>
+                <img src='<%=etdk.g._IMG_%>child_world6.png' class='child_world_down'/>
+            </div>
+            <div class='what_child_world5 inline-block what_child_world'>
+                <h3>最放心的童年伙伴</h3>
+                <span>权威助阵,为孩子量身打造专属读物。</span>
+                <img src='<%=etdk.g._IMG_%>child_world3.png' class='child_world_up'/>
+                <img src='<%=etdk.g._IMG_%>child_world8.png' class='child_world_down'/>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class='news_info'>
+    <div class='today_is_news inline-block'>
+        <div style='text-align:left;'><img src='<%=etdk.g._IMG_ %>today_is_news_img.png' /></div>
+        <ul class='topline_vessel'>
+            <% _.each(topline,function(value,key,list){%>
+                <li>
+                    <div class='t_v_img inline-block'><img src='<%=value.cover_image%>' /></div>
+                    <div class='t_v_chapter inline-block'>
+                        <a href='/chapter/<%=value.id%>'>
+                        <h3 class='t_v_title'><%=value.title%></h3>
+                        <div class='t_v_summary'><%=value.intro%></div>
+                            <span>...</span>
+                        </a>
+                    </div>
+                </li>
+            <%})%>
+        </ul>
+    </div>
+    <div class='latest_news inline-block'>
+        <div style='text-align:center;'><img src='<%=etdk.g._IMG_ %>latest_news_img.png' /></div>
+        <div class='l_n_t_vessel'>
+                    <h3 class='l_n_t_title'>
+                        <a href='/chapter/<%=latest[0].id%>'>
+                            <%=latest[0].title%>
+                        </a>
+                    </h3>
+                    <div class='l_n_t_summary'><%=latest[0].intro%></div>
+        </div>
+        <ul class='l_n_info'>
+            <% _.each(latest,function(value,key,list){%>
+                <li>
+                    <span class='zixun_world'>资讯</span>
+                    <div class='l_n_li_title inline-block'>
+                        <a href='/chapter/<%=value.id%>'><%=value.title%></a>
+                    </div>
+                    <span>...</span>
+                </li>
+            <%})%>
+        </ul>
+
+    </div>
+</div>

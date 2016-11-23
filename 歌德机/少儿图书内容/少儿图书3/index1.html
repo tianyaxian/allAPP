@@ -1,0 +1,141 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>少儿图书</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/swiper-3.3.1.min.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/swiper-demos.js"></script>
+</head>
+<body>
+<div class="tittle">
+    <hr>
+    <h1>多媒体互动电子书专题</h1>
+</div>
+<div class="contetn" style="overflow: hidden;width: 100%;height: 100%;">
+    <div role="main" class="main" id="mainList">
+        <div class="wrapT" style="display: block; ">
+            <div class="swiper-main" >
+                <div class="swiper-container swiper1">
+                    <div class="swiper-wrapper" id="cygs" style="width: 14080px;">
+                    </div>
+                </div>
+                <div class="pagination pagination1"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main" >
+                <div class="swiper-container swiper2">
+                    <div class="swiper-wrapper" id="gxjd" style="width: 14080px;">
+                    </div>
+                </div>
+                <div class="pagination pagination2"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main" >
+                <div class="swiper-container swiper3">
+                    <div class="swiper-wrapper" id="kpbk" style="width: 14080px;">
+
+                    </div>
+                </div>
+                <div class="pagination pagination3"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main" >
+                <div class="swiper-container swiper4">
+                    <div class="swiper-wrapper" id="kcwg" style="width: 14080px;">
+                    </div>
+                </div>
+                <div class="pagination pagination4"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main" >
+                <div class="swiper-container swiper5">
+                    <div class="swiper-wrapper" id="mrgs" style="width: 14080px;">
+                    </div>
+                </div>
+                <div class="pagination pagination5"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main" >
+                <div class="swiper-container swiper6">
+                    <div class="swiper-wrapper" id="youer" style="width: 14080px;">
+                    </div>
+                </div>
+                <div class="pagination pagination6"></div>
+            </div>
+        </div>
+        <div class="wrapT" style="display: none;">
+            <div class="swiper-main" >
+                <div class="swiper-container swiper7">
+                    <div class="swiper-wrapper" id="zwmz" style="width: 14080px;">
+                    </div>
+                </div>
+                <div class="pagination pagination7"></div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="refresh">
+           <img src="images/refesh.png"/>
+        </div>
+        <ul class="navUl">
+            <li>成语故事 </li>
+            <li>国学经典 </li>
+            <li>科普百科 </li>
+            <li>昆虫王国 </li>
+            <li>名人故事 </li>
+            <li class="children">幼儿 </li>
+            <li>中外名著 </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div id="mask"class="mask"></div>
+<div class="content1">
+    <div class="wrap">
+        <div class="loading">页面加载中....</div>
+        <iframe src=" https://www.baidu.com" name="iframe"  frameborder="0" ></iframe>
+    </div>
+    <span id="close"><img src="images/closeBtn.png"/> </span>
+</div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        $(".type-book li").each(function(){
+            $(this).click(function(){
+                var href = $(this).children('a').attr("href");
+                $("#mask").css({
+                    "height":$(document).height(),
+                    "width":$(document).width()
+                }).show();
+                $(".content1").show();
+                $('.loading').show();
+                $(".wrap").children('iframe').attr("src",href);
+                $(".wrap").children('iframe').load($('.loading').hide());
+                return false;
+            })
+        });
+
+        $("#close").click(function(){
+            $(".content1").hide();
+            $("#mask").hide();
+            $(".wrap").children('iframe').attr("src","about:blank");
+        })
+
+    })
+</script>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $(".refresh").click(function(){
+            window.location.reload();
+        })
+    });
+</script>
+</html>

@@ -1,0 +1,19 @@
+<% _.each(data.list,function(value,key,list){%>
+<div class='inline-block list_img relative'>
+    <div class='book_cover'>
+        <a href='/book/<%=value.appId%>' target='_blank'>
+            <img src='<%=etdk.g._IMG_%>preloader.gif'
+                 onload='etdk.g.delayImg(this,\"<%=data.http+value.appId+data.cover%>\")'/>
+        </a>
+    </div>
+    <h4><%=value.appName%></h4>
+    <div style='text-align: center;font-weight: bold'>
+        <img src='<%=etdk.g._IMG_%>load_nums.png' title='下载次数'
+             style='vertical-align:middle;height:20px;width:20px;'/>
+        &nbsp;<%=parseInt(value.units)+1000%>&nbsp;
+        <img style='vertical-align:middle;height:20px;width:20px;' src='<%=etdk.g._IMG_%>publish_date.png' title='发布日期'/>
+        &nbsp;<%=value.availabilityDate%>
+    </div>
+</div>
+<%});%>
+
